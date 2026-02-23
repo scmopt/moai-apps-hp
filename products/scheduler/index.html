@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="orange">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOAI-Scheduler | スケジューリング最適化ソルバー</title>
+    <meta name="description" content="MOAI-Schedulerは複数工程・設備・人員を考慮し、納期遵守と総工期短縮を自動で実現するスケジューリング最適化ソルバーです。">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="icon" type="image/png" href="../../logo/moai-logo.png">
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="../../index.html" class="nav-logo"><img src="../../logo/moai-logo.png"
+                    alt="MOAI"><span>MOAI</span></a>
+            <ul class="nav-links">
+                <li><a href="../../index.html">製品一覧</a></li>
+                <li><a href="#features">機能</a></li>
+                <li><a href="#constraints">制約</a></li>
+                <li><a href="#outputs">出力</a></li>
+                <li><a href="#cta" class="nav-cta contact-trigger">お問い合わせ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero hero-product">
+        <div class="container">
+            <div class="hero-content">
+                <div class="breadcrumb fade-in"><a href="../../index.html">MOAI</a><span>›</span><span
+                        class="current">Scheduler</span></div>
+                <div class="hero-badge fade-in delay-1">⚙️ スケジューリング最適化</div>
+                <h1 class="fade-in delay-2">生産計画を<br><span class="gradient-text">自動最適化</span>で<br>納期と効率を両立</h1>
+                <p class="fade-in delay-3">「どの作業を」「いつ」「どの設備で」行うかを自動判定。納期遵守・総工期短縮・段取り替え最小化を同時に実現。</p>
+                <div class="hero-buttons fade-in delay-4">
+                    <a href="#cta" class="btn-primary">デモを依頼 →</a>
+                    <a href="#features" class="btn-secondary">機能を見る</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-bar fade-in">
+        <div class="container">
+            <div class="stat-item">
+                <div class="stat-number" data-count="4">0</div>
+                <div class="stat-label">最適化目的</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="3">0</div>
+                <div class="stat-label">リソース種別</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="5">0</div>
+                <div class="stat-label">制約カテゴリ</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="4">0</div>
+                <div class="stat-label">出力ビュー</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <div class="features-header">
+                <div class="section-label fade-in">主要機能</div>
+                <h2 class="section-title fade-in delay-1">工程・設備・人員の<br><span class="gradient-text">統合スケジューリング</span>
+                </h2>
+                <p class="section-desc fade-in delay-2">Job-Task-Mode-Resourceの4階層で実務の複雑さを忠実にモデリング。</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card fade-in delay-1">
+                    <div class="feature-icon">📋</div>
+                    <h3>案件（Job）管理</h3>
+                    <p>優先度、着手可能日、最終期限、希望納期を設定。案件単位での進捗管理。</p>
+                </div>
+                <div class="feature-card fade-in delay-2">
+                    <div class="feature-icon">🏭</div>
+                    <h3>リソース管理</h3>
+                    <p>マシン・人員・消耗型資材の3種別。非稼働時間帯、連続稼働も設定可能。</p>
+                </div>
+                <div class="feature-card fade-in delay-3">
+                    <div class="feature-icon">🔧</div>
+                    <h3>工程（Task）定義</h3>
+                    <p>着手・完了時間枠、中断許可、待機許可、任意フラグなど詳細な工程制御。</p>
+                </div>
+                <div class="feature-card fade-in delay-4">
+                    <div class="feature-icon">⚡</div>
+                    <h3>実施パターン選択</h3>
+                    <p>1つの工程に複数の実施方法を登録し、全体最適なパターンを自動選択。</p>
+                </div>
+                <div class="feature-card fade-in delay-5">
+                    <div class="feature-icon">🔨</div>
+                    <h3>段取り替え管理</h3>
+                    <p>作業切替時の洗浄・型替え等の準備時間を自動挿入しスケジュールに反映。</p>
+                </div>
+                <div class="feature-card fade-in delay-6">
+                    <div class="feature-icon">📊</div>
+                    <h3>ガントチャート</h3>
+                    <p>マシン別・タスク別のガントチャートとリソース使用率推移グラフで可視化。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="constraints" id="constraints">
+        <div class="container">
+            <div class="section-label fade-in">制約対応力</div>
+            <h2 class="section-title fade-in delay-1">生産現場の<span class="gradient-text">複雑なルール</span>を厳守</h2>
+            <div class="constraints-layout">
+                <div class="constraints-list">
+                    <div class="constraint-item fade-in-left delay-1">
+                        <div class="constraint-check">✓</div>
+                        <div>
+                            <h4>時間枠の厳守</h4>
+                            <p>着手可能日・完了期限・工程時間枠を外れない計画作成</p>
+                        </div>
+                    </div>
+                    <div class="constraint-item fade-in-left delay-2">
+                        <div class="constraint-check">✓</div>
+                        <div>
+                            <h4>設備能力の超過禁止</h4>
+                            <p>同一時間帯のリソース合計が最大容量を超えない</p>
+                        </div>
+                    </div>
+                    <div class="constraint-item fade-in-left delay-3">
+                        <div class="constraint-check">✓</div>
+                        <div>
+                            <h4>工程間の順序関係</h4>
+                            <p>前後関係・リソース固定・連続性の指定に対応</p>
+                        </div>
+                    </div>
+                    <div class="constraint-item fade-in-left delay-4">
+                        <div class="constraint-check">✓</div>
+                        <div>
+                            <h4>段取り替え時間</h4>
+                            <p>作業切替時の準備時間を自動考慮</p>
+                        </div>
+                    </div>
+                    <div class="constraint-item fade-in-left delay-5">
+                        <div class="constraint-check">✓</div>
+                        <div>
+                            <h4>最適パターン選択</h4>
+                            <p>複数実施方法から全体効率最高のパターンを自動選定</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="constraints-visual fade-in-right delay-2">
+                    <div class="constraints-visual-card">
+                        <div class="constraint-gauge">
+                            <div class="gauge-header"><span>納期遵守率</span><span>98%</span></div>
+                            <div class="gauge-bar">
+                                <div class="gauge-fill orange" data-width="98%" style="width:98%;"></div>
+                            </div>
+                        </div>
+                        <div class="constraint-gauge">
+                            <div class="gauge-header"><span>メイクスパン短縮</span><span>-22%</span></div>
+                            <div class="gauge-bar">
+                                <div class="gauge-fill blue" data-width="78%" style="width:78%;"></div>
+                            </div>
+                        </div>
+                        <div class="constraint-gauge">
+                            <div class="gauge-header"><span>設備稼働率</span><span>94%</span></div>
+                            <div class="gauge-bar">
+                                <div class="gauge-fill green" data-width="94%" style="width:94%;"></div>
+                            </div>
+                        </div>
+                        <div class="constraint-gauge">
+                            <div class="gauge-header"><span>段取り時間削減</span><span>-35%</span></div>
+                            <div class="gauge-bar">
+                                <div class="gauge-fill purple" data-width="65%" style="width:65%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="outputs" id="outputs">
+        <div class="container">
+            <div class="outputs-header">
+                <div class="section-label fade-in">出力結果</div>
+                <h2 class="section-title fade-in delay-1"><span class="gradient-text">4つのビュー</span>でスケジュールを把握</h2>
+            </div>
+            <div class="outputs-grid" style="grid-template-columns: repeat(4, 1fr);">
+                <div class="output-card fade-in delay-1">
+                    <div class="output-number">01</div>
+                    <h3>スケジュール表</h3>
+                    <p>各タスクの開始・終了時刻リスト</p>
+                </div>
+                <div class="output-card fade-in delay-2">
+                    <div class="output-number">02</div>
+                    <h3>マシンガント</h3>
+                    <p>マシン別の作業スケジュール</p>
+                </div>
+                <div class="output-card fade-in delay-3">
+                    <div class="output-number">03</div>
+                    <h3>タスクガント</h3>
+                    <p>タスクIDごとのスケジュール</p>
+                </div>
+                <div class="output-card fade-in delay-4">
+                    <div class="output-number">04</div>
+                    <h3>リソース使用率</h3>
+                    <p>使用率の時系列推移グラフ</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="cta">
+        <div class="container">
+            <div class="cta-content fade-in">
+                <div class="section-label">お問い合わせ</div>
+                <h2><span class="gradient-text">スケジューリング最適化</span>を、今すぐ始めよう</h2>
+                <p>MOAI-Schedulerの導入・トライアルに関するご相談はお気軽にどうぞ。</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn-primary contact-trigger">お問い合わせフォームを開く</a>
+                    <a href="../../index.html" class="btn-secondary">製品一覧に戻る</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo"><img src="../../logo/moai-logo.png" alt="MOAI"><span>MOAI</span></div>
+            <div class="footer-text">© 2026 MOAI. All rights reserved.</div>
+        </div>
+    </footer>
+    <script src="../../script.js"></script>
+</body>
+
+</html>

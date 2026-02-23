@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="cyan">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOAI-Forecast | 需要予測・時系列分析システム</title>
+    <meta name="description" content="MOAI-Forecastは過去の実績データや変動要因を基に将来の需要を高精度に予測する時系列分析システムです。">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="icon" type="image/png" href="../../logo/moai-logo.png">
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="../../index.html" class="nav-logo"><img src="../../logo/moai-logo.png"
+                    alt="MOAI"><span>MOAI</span></a>
+            <ul class="nav-links">
+                <li><a href="../../index.html">製品一覧</a></li>
+                <li><a href="#features">機能</a></li>
+                <li><a href="#metrics">評価指標</a></li>
+                <li><a href="#outputs">出力</a></li>
+                <li><a href="#cta" class="nav-cta contact-trigger">お問い合わせ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero hero-product">
+        <div class="container">
+            <div class="hero-content">
+                <div class="breadcrumb fade-in"><a href="../../index.html">MOAI</a><span>›</span><span
+                        class="current">Forecast</span></div>
+                <div class="hero-badge fade-in delay-1">📈 需要予測・時系列分析</div>
+                <h1 class="fade-in delay-2">需要を<span class="gradient-text">高精度</span>に予測し<br>在庫と販売を最適化</h1>
+                <p class="fade-in delay-3">過去の実績データと多角的な変動要因（天候、販促、属性）を統合し、将来の需要を高精度に予測。最適な在庫計画・販売戦略の立案を支援します。</p>
+                <div class="hero-buttons fade-in delay-4">
+                    <a href="#cta" class="btn-primary">デモを依頼 →</a>
+                    <a href="#features" class="btn-secondary">機能を見る</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-bar fade-in">
+        <div class="container">
+            <div class="stat-item">
+                <div class="stat-number" data-count="12">0</div>
+                <div class="stat-label">評価指標</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="3">0</div>
+                <div class="stat-label">特徴量カテゴリ</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="4">0</div>
+                <div class="stat-label">出力レポート</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="5">0</div>
+                <div class="stat-label">品質プリセット</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <div class="features-header">
+                <div class="section-label fade-in">主要機能</div>
+                <h2 class="section-title fade-in delay-1">多角的な要因を統合し<br><span class="gradient-text">精密な予測</span>を実現</h2>
+                <p class="section-desc fade-in delay-2">3カテゴリの特徴量で、あらゆるビジネスシナリオに対応します。</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card fade-in delay-1">
+                    <div class="feature-icon">🏷️</div>
+                    <h3>固定属性情報</h3>
+                    <p>商品カテゴリ、ブランド、地域、メーカーなど時間で変化しない情報を活用。</p>
+                </div>
+                <div class="feature-card fade-in delay-2">
+                    <div class="feature-icon">📅</div>
+                    <h3>予定・既知情報</h3>
+                    <p>祝日フラグ、キャンペーン有無、価格改定など将来確定済みの情報を組込み。</p>
+                </div>
+                <div class="feature-card fade-in delay-3">
+                    <div class="feature-icon">🌡️</div>
+                    <h3>実績・観測情報</h3>
+                    <p>実績気温、アクセス数、検索トレンドなど過去観測データを学習に利用。</p>
+                </div>
+                <div class="feature-card fade-in delay-4">
+                    <div class="feature-icon">⚡</div>
+                    <h3>品質プリセット</h3>
+                    <p>fast_trainingからhigh_qualityまで、精度と速度のトレードオフを自由に調整。</p>
+                </div>
+                <div class="feature-card fade-in delay-5">
+                    <div class="feature-icon">📊</div>
+                    <h3>確率予測</h3>
+                    <p>分位点(Quantile)による確率的予測で、需要の不確実性を定量化。</p>
+                </div>
+                <div class="feature-card fade-in delay-6">
+                    <div class="feature-icon">🔍</div>
+                    <h3>要因寄与度分析</h3>
+                    <p>どの要因が予測にどの程度影響したかのFeature Importance分析。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="constraints" id="metrics">
+        <div class="container">
+            <div class="section-label fade-in">評価指標</div>
+            <h2 class="section-title fade-in delay-1"><span class="gradient-text">12の評価指標</span>で精度を検証</h2>
+            <div class="constraints-layout">
+                <div class="constraints-list">
+                    <div class="constraint-item fade-in-left delay-1">
+                        <div class="constraint-check">✓</div>
+                        <div>
+                            <h4>MAE / RMSE</h4>
+                            <p>絶対量ベースの誤差評価。直感的で解釈しやすい指標</p>
+                        </div>
+                    </div>
+                    <div class="constraint-item fade-in-left delay-2">
+                        <div class="constraint-check">✓</div>
+                        <div>
+                            <h4>MAPE / SMAPE / WAPE</h4>
+                            <p>パーセント比率で異なるスケールの商品群を横断比較</p>
+                        </div>
+                    </div>
+                    <div class="constraint-item fade-in-left delay-3">
+                        <div class="constraint-check">✓</div>
+                        <div>
+                            <h4>MASE / RMSSE</h4>
+                            <p>ナイーブ予測対比の高度な評価。M5コンペでも採用</p>
+                        </div>
+                    </div>
+                    <div class="constraint-item fade-in-left delay-4">
+                        <div class="constraint-check">✓</div>
+                        <div>
+                            <h4>SQL / WQL</h4>
+                            <p>確率予測の精度を分位点ベースで評価。在庫リスク管理に最適</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="constraints-visual fade-in-right delay-2">
+                    <div class="constraints-visual-card">
+                        <div class="constraint-gauge">
+                            <div class="gauge-header"><span>予測精度 (MASE)</span><span>0.82</span></div>
+                            <div class="gauge-bar">
+                                <div class="gauge-fill blue" data-width="82%" style="width:82%;"></div>
+                            </div>
+                        </div>
+                        <div class="constraint-gauge">
+                            <div class="gauge-header"><span>WAPE</span><span>6.3%</span></div>
+                            <div class="gauge-bar">
+                                <div class="gauge-fill green" data-width="94%" style="width:94%;"></div>
+                            </div>
+                        </div>
+                        <div class="constraint-gauge">
+                            <div class="gauge-header"><span>要因カバレッジ</span><span>95%</span></div>
+                            <div class="gauge-bar">
+                                <div class="gauge-fill purple" data-width="95%" style="width:95%;"></div>
+                            </div>
+                        </div>
+                        <div class="constraint-gauge">
+                            <div class="gauge-header"><span>モデル自動選択率</span><span>100%</span></div>
+                            <div class="gauge-bar">
+                                <div class="gauge-fill orange" data-width="100%" style="width:100%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="outputs" id="outputs">
+        <div class="container">
+            <div class="outputs-header">
+                <div class="section-label fade-in">出力結果</div>
+                <h2 class="section-title fade-in delay-1"><span class="gradient-text">4つのレポート</span>で予測を完全把握</h2>
+            </div>
+            <div class="outputs-grid" style="grid-template-columns: repeat(4, 1fr);">
+                <div class="output-card fade-in delay-1">
+                    <div class="output-number">01</div>
+                    <h3>需要予測値</h3>
+                    <p>商品・拠点ごとの将来予測数値</p>
+                </div>
+                <div class="output-card fade-in delay-2">
+                    <div class="output-number">02</div>
+                    <h3>要因寄与度</h3>
+                    <p>各要因の予測への影響度分析</p>
+                </div>
+                <div class="output-card fade-in delay-3">
+                    <div class="output-number">03</div>
+                    <h3>予測精度</h3>
+                    <p>モデルの誤差率・適合度レポート</p>
+                </div>
+                <div class="output-card fade-in delay-4">
+                    <div class="output-number">04</div>
+                    <h3>異常値レポート</h3>
+                    <p>実績から乖離したデータの抽出</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="cta">
+        <div class="container">
+            <div class="cta-content fade-in">
+                <div class="section-label">お問い合わせ</div>
+                <h2><span class="gradient-text">需要予測</span>を、今すぐ始めよう</h2>
+                <p>MOAI-Forecastの導入・トライアルに関するご相談はお気軽にどうぞ。</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn-primary contact-trigger">お問い合わせフォームを開く</a>
+                    <a href="../../index.html" class="btn-secondary">製品一覧に戻る</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo"><img src="../../logo/moai-logo.png" alt="MOAI"><span>MOAI</span></div>
+            <div class="footer-text">© 2026 MOAI. All rights reserved.</div>
+        </div>
+    </footer>
+    <script src="../../script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="indigo">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>METRO | 配送計画最適化システム</title>
+    <meta name="description" content="METROは複数車両でのジョブ・シップメント配送を最適化し、総コスト・移動距離を最小化する配送計画システムです。">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="icon" type="image/png" href="../../logo/moai-logo.png">
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="../../index.html" class="nav-logo"><img src="../../logo/moai-logo.png"
+                    alt="MOAI"><span>MOAI</span></a>
+            <ul class="nav-links">
+                <li><a href="../../index.html">製品一覧</a></li>
+                <li><a href="#features">機能</a></li>
+                <li><a href="#constraints">制約</a></li>
+                <li><a href="#outputs">出力</a></li>
+                <li><a href="#cta" class="nav-cta contact-trigger">お問い合わせ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero hero-product">
+        <div class="container">
+            <div class="hero-content">
+                <div class="breadcrumb fade-in"><a href="../../index.html">MOAI</a><span>›</span><span
+                        class="current">METRO</span></div>
+                <div class="hero-badge fade-in delay-1">🗺️ MEta Truck Routing Optimizer</div>
+                <h1 class="fade-in delay-2">実務制約を<br><span class="gradient-text">完全に網羅</span>した<br>配送計画最適化</h1>
+                <p class="fade-in delay-3">スキルマッチング、法定休憩、優先度管理——現場の複雑なルールをすべて考慮した最適な運行計画を自動生成。</p>
+                <div class="hero-buttons fade-in delay-4">
+                    <a href="#cta" class="btn-primary">デモを依頼 →</a>
+                    <a href="#features" class="btn-secondary">機能を見る</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-bar fade-in">
+        <div class="container">
+            <div class="stat-item">
+                <div class="stat-number" data-count="6">0</div>
+                <div class="stat-label">制約カテゴリ</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="2">0</div>
+                <div class="stat-label">案件タイプ</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="5">0</div>
+                <div class="stat-label">出力項目</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="100">0</div>
+                <div class="stat-label">優先度レベル</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <div class="features-header">
+                <div class="section-label fade-in">主要機能</div>
+                <h2 class="section-title fade-in delay-1">ジョブとシップメントの<br><span class="gradient-text">統合最適化</span></h2>
+                <p class="section-desc fade-in delay-2">配送・集荷・拠点間輸送を一元管理し、最適な運行計画を自動作成。</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card fade-in delay-1">
+                    <div class="feature-icon">📋</div>
+                    <h3>ジョブ管理</h3>
+                    <p>単一地点の配送・集荷案件を管理。準備時間、作業時間、スキル要件まで設定可能。</p>
+                </div>
+                <div class="feature-card fade-in delay-2">
+                    <div class="feature-icon">🔀</div>
+                    <h3>シップメント管理</h3>
+                    <p>積込→荷降ろしの「対の輸送」を設定。順序制約を自動考慮。</p>
+                </div>
+                <div class="feature-card fade-in delay-3">
+                    <div class="feature-icon">🛠️</div>
+                    <h3>スキルマッチング</h3>
+                    <p>資格・特殊装備が必要な案件に対し、対応可能な車両のみを自動割当て。</p>
+                </div>
+                <div class="feature-card fade-in delay-4">
+                    <div class="feature-icon">☕</div>
+                    <h3>休憩プラン管理</h3>
+                    <p>法定休憩時間をルート内に自動挿入。労務管理コンプライアンスを遵守。</p>
+                </div>
+                <div class="feature-card fade-in delay-5">
+                    <div class="feature-icon">⭐</div>
+                    <h3>優先度制御</h3>
+                    <p>0〜100の優先度で案件を管理。全件回れない場合は高優先度を優先配分。</p>
+                </div>
+                <div class="feature-card fade-in delay-6">
+                    <div class="feature-icon">🗺️</div>
+                    <h3>地図可視化</h3>
+                    <p>詳細道路経路付きのインタラクティブマップとガントチャートで結果を把握。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="constraints" id="constraints">
+        <div class="container">
+            <div class="section-label fade-in">制約対応力</div>
+            <h2 class="section-title fade-in delay-1">現場の<span class="gradient-text">あらゆるルール</span>を厳守</h2>
+            <div class="constraints-layout">
+                <div class="constraints-list">
+                    <div class="constraint-item fade-in-left delay-1">
+                        <div class="constraint-check">✓</div>
+                        <div>
+                            <h4>時間枠の遵守</h4>
+                            <p>複数の訪問可能時間帯（午前・午後）に対応</p>
+                        </div>
+                    </div>
+                    <div class="constraint-item fade-in-left delay-2">
+                        <div class="constraint-check">✓</div>
+                        <div>
+                            <h4>積載制限</h4>
+                            <p>重量・容積の複数基準での同時制約管理</p>
+                        </div>
+                    </div>
+                    <div class="constraint-item fade-in-left delay-3">
+                        <div class="constraint-check">✓</div>
+                        <div>
+                            <h4>スキルマッチング</h4>
+                            <p>車両の対応可能スキルと案件の必須スキルを自動照合</p>
+                        </div>
+                    </div>
+                    <div class="constraint-item fade-in-left delay-4">
+                        <div class="constraint-check">✓</div>
+                        <div>
+                            <h4>輸送順序保証</h4>
+                            <p>シップメントの積込→荷降ろし順序を厳密に維持</p>
+                        </div>
+                    </div>
+                    <div class="constraint-item fade-in-left delay-5">
+                        <div class="constraint-check">✓</div>
+                        <div>
+                            <h4>休憩の強制</h4>
+                            <p>指定時間帯内の必須休憩をルートに自動組込み</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="constraints-visual fade-in-right delay-2">
+                    <div class="constraints-visual-card">
+                        <div class="constraint-gauge">
+                            <div class="gauge-header"><span>制約充足率</span><span>100%</span></div>
+                            <div class="gauge-bar">
+                                <div class="gauge-fill blue" data-width="100%" style="width:100%;"></div>
+                            </div>
+                        </div>
+                        <div class="constraint-gauge">
+                            <div class="gauge-header"><span>車両稼働率</span><span>91%</span></div>
+                            <div class="gauge-bar">
+                                <div class="gauge-fill green" data-width="91%" style="width:91%;"></div>
+                            </div>
+                        </div>
+                        <div class="constraint-gauge">
+                            <div class="gauge-header"><span>移動距離削減</span><span>-28%</span></div>
+                            <div class="gauge-bar">
+                                <div class="gauge-fill purple" data-width="78%" style="width:78%;"></div>
+                            </div>
+                        </div>
+                        <div class="constraint-gauge">
+                            <div class="gauge-header"><span>案件割当率</span><span>97%</span></div>
+                            <div class="gauge-bar">
+                                <div class="gauge-fill orange" data-width="97%" style="width:97%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="outputs" id="outputs">
+        <div class="container">
+            <div class="outputs-header">
+                <div class="section-label fade-in">出力結果</div>
+                <h2 class="section-title fade-in delay-1"><span class="gradient-text">5つのレポート</span>で運行を完全把握</h2>
+            </div>
+            <div class="outputs-grid">
+                <div class="output-card fade-in delay-1">
+                    <div class="output-number">01</div>
+                    <h3>運行概要</h3>
+                    <p>総コスト・ルート数・移動距離</p>
+                </div>
+                <div class="output-card fade-in delay-2">
+                    <div class="output-number">02</div>
+                    <h3>ルート詳細</h3>
+                    <p>車両別の時系列スケジュール</p>
+                </div>
+                <div class="output-card fade-in delay-3">
+                    <div class="output-number">03</div>
+                    <h3>作業指示</h3>
+                    <p>到着・作業・出発時刻と積載量</p>
+                </div>
+                <div class="output-card fade-in delay-4">
+                    <div class="output-number">04</div>
+                    <h3>違反チェック</h3>
+                    <p>遅延・容量オーバーの確認</p>
+                </div>
+                <div class="output-card fade-in delay-5">
+                    <div class="output-number">05</div>
+                    <h3>ルート形状</h3>
+                    <p>地図上の詳細経路データ</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="cta">
+        <div class="container">
+            <div class="cta-content fade-in">
+                <div class="section-label">お問い合わせ</div>
+                <h2><span class="gradient-text">配送計画最適化</span>を、今すぐ始めよう</h2>
+                <p>METROの導入・トライアルに関するご相談はお気軽にどうぞ。</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn-primary contact-trigger">お問い合わせフォームを開く</a>
+                    <a href="../../index.html" class="btn-secondary">製品一覧に戻る</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo"><img src="../../logo/moai-logo.png" alt="MOAI"><span>MOAI</span></div>
+            <div class="footer-text">© 2026 MOAI. All rights reserved.</div>
+        </div>
+    </footer>
+    <script src="../../script.js"></script>
+</body>
+
+</html>

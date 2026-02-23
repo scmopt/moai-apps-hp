@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="green">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOAI-Inventory | 在庫最適化システム</title>
+    <meta name="description" content="MOAI-Inventoryは数理最適化アルゴリズムで在庫コストの最小化とサービスレベルの最適バランスを実現する在庫最適化システムです。">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="icon" type="image/png" href="../../logo/moai-logo.png">
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="../../index.html" class="nav-logo"><img src="../../logo/moai-logo.png"
+                    alt="MOAI"><span>MOAI</span></a>
+            <ul class="nav-links">
+                <li><a href="../../index.html">製品一覧</a></li>
+                <li><a href="#features">機能</a></li>
+                <li><a href="#models">モデル</a></li>
+                <li><a href="#cta" class="nav-cta contact-trigger">お問い合わせ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero hero-product">
+        <div class="container">
+            <div class="hero-content">
+                <div class="breadcrumb fade-in"><a href="../../index.html">MOAI</a><span>›</span><span
+                        class="current">Inventory</span></div>
+                <div class="hero-badge fade-in delay-1">📦 在庫最適化</div>
+                <h1 class="fade-in delay-2">在庫コストと<br>サービスレベルの<br><span class="gradient-text">最適バランス</span></h1>
+                <p class="fade-in delay-3">EOQからマルチエシェロンまで、数理最適化で「いつ、どれだけ発注すべきか」の最適解を導き出す意思決定支援ツール。</p>
+                <div class="hero-buttons fade-in delay-4">
+                    <a href="#cta" class="btn-primary">デモを依頼 →</a>
+                    <a href="#features" class="btn-secondary">機能を見る</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-bar fade-in">
+        <div class="container">
+            <div class="stat-item">
+                <div class="stat-number" data-count="10">0</div>
+                <div class="stat-label">最適化モデル</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="3">0</div>
+                <div class="stat-label">ネットワーク種別</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="2">0</div>
+                <div class="stat-label">シミュレータ</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number gradient-text">DP</div>
+                <div class="stat-label">動的計画法搭載</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <div class="features-header">
+                <div class="section-label fade-in">主要機能</div>
+                <h2 class="section-title fade-in delay-1">古典理論から最先端まで<br><span class="gradient-text">網羅的にカバー</span></h2>
+                <p class="section-desc fade-in delay-2">単一拠点からサプライチェーン全体まで、あらゆる在庫問題に対応。</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card fade-in delay-1">
+                    <div class="feature-icon">📐</div>
+                    <h3>EOQ / JRP</h3>
+                    <p>経済的発注量モデルと同時発注問題。固定費と保持費のトレードオフを最適化。</p>
+                </div>
+                <div class="feature-card fade-in delay-2">
+                    <div class="feature-icon">🎲</div>
+                    <h3>ニュースベンダー</h3>
+                    <p>不確実な需要下で廃棄コストと機会損失の最適バランスを決定する単一期間モデル。</p>
+                </div>
+                <div class="feature-card fade-in delay-3">
+                    <div class="feature-icon">🔧</div>
+                    <h3>(r,Q) / (s,S) ポリシー</h3>
+                    <p>固定費と確率的需要を同時に扱う高度な連続レビューシステム。</p>
+                </div>
+                <div class="feature-card fade-in delay-4">
+                    <div class="feature-icon">📊</div>
+                    <h3>Wagner-Whitin法</h3>
+                    <p>動的計画法で期間ごとの確定需要に対する最適発注パターンを算出。</p>
+                </div>
+                <div class="feature-card fade-in delay-5">
+                    <div class="feature-icon">🌐</div>
+                    <h3>マルチエシェロン</h3>
+                    <p>工場・倉庫・店舗のサプライチェーン全体を統合最適化。GSM対応。</p>
+                </div>
+                <div class="feature-card fade-in delay-6">
+                    <div class="feature-icon">🧪</div>
+                    <h3>シミュレーション</h3>
+                    <p>最適パラメータを実運用前に検証する離散イベントシミュレーション。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="constraints" id="models">
+        <div class="container">
+            <div class="section-label fade-in">モデル選定</div>
+            <h2 class="section-title fade-in delay-1"><span class="gradient-text">あらゆる在庫問題</span>に最適モデル</h2>
+            <div class="constraints-layout">
+                <div class="constraints-list">
+                    <div class="constraint-item fade-in-left delay-1">
+                        <div class="constraint-check">✓</div>
+                        <div>
+                            <h4>一定需要</h4>
+                            <p>EOQ・Wagner-Whitinで厳密な最適解を高速算出</p>
+                        </div>
+                    </div>
+                    <div class="constraint-item fade-in-left delay-2">
+                        <div class="constraint-check">✓</div>
+                        <div>
+                            <h4>不確実な需要</h4>
+                            <p>ニュースベンダー・RQ・SSポリシーで確率的最適化</p>
+                        </div>
+                    </div>
+                    <div class="constraint-item fade-in-left delay-3">
+                        <div class="constraint-check">✓</div>
+                        <div>
+                            <h4>非定常需要</h4>
+                            <p>有限期間DPで日ごとに異なる最適ポリシーを算出</p>
+                        </div>
+                    </div>
+                    <div class="constraint-item fade-in-left delay-4">
+                        <div class="constraint-check">✓</div>
+                        <div>
+                            <h4>直列ネットワーク</h4>
+                            <p>Chen-Zhengアルゴリズムで多段階在庫を厳密最適化</p>
+                        </div>
+                    </div>
+                    <div class="constraint-item fade-in-left delay-5">
+                        <div class="constraint-check">✓</div>
+                        <div>
+                            <h4>複雑な供給網</h4>
+                            <p>GSM・座標降下法・シミュレーション最適化で対応</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="constraints-visual fade-in-right delay-2">
+                    <div class="constraints-visual-card">
+                        <div class="constraint-gauge">
+                            <div class="gauge-header"><span>在庫回転率改善</span><span>+35%</span></div>
+                            <div class="gauge-bar">
+                                <div class="gauge-fill green" data-width="85%" style="width:85%;"></div>
+                            </div>
+                        </div>
+                        <div class="constraint-gauge">
+                            <div class="gauge-header"><span>欠品率削減</span><span>-60%</span></div>
+                            <div class="gauge-bar">
+                                <div class="gauge-fill blue" data-width="90%" style="width:90%;"></div>
+                            </div>
+                        </div>
+                        <div class="constraint-gauge">
+                            <div class="gauge-header"><span>在庫コスト削減</span><span>-25%</span></div>
+                            <div class="gauge-bar">
+                                <div class="gauge-fill purple" data-width="75%" style="width:75%;"></div>
+                            </div>
+                        </div>
+                        <div class="constraint-gauge">
+                            <div class="gauge-header"><span>サービスレベル</span><span>98%</span></div>
+                            <div class="gauge-bar">
+                                <div class="gauge-fill orange" data-width="98%" style="width:98%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="cta">
+        <div class="container">
+            <div class="cta-content fade-in">
+                <div class="section-label">お問い合わせ</div>
+                <h2><span class="gradient-text">在庫最適化</span>を、今すぐ始めよう</h2>
+                <p>MOAI-Inventoryの導入・トライアルに関するご相談はお気軽にどうぞ。</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn-primary contact-trigger">お問い合わせフォームを開く</a>
+                    <a href="../../index.html" class="btn-secondary">製品一覧に戻る</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo"><img src="../../logo/moai-logo.png" alt="MOAI"><span>MOAI</span></div>
+            <div class="footer-text">© 2026 MOAI. All rights reserved.</div>
+        </div>
+    </footer>
+    <script src="../../script.js"></script>
+</body>
+
+</html>

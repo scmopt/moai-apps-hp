@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="teal">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ship Scheduling | 船舶スケジューリング最適化</title>
+    <meta name="description" content="船舶スケジューリング最適化システムは複数港間の輸送計画を最適化し、収益を最大化する航行スケジュールを算出します。">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="icon" type="image/png" href="../../logo/moai-logo.png">
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="../../index.html" class="nav-logo"><img src="../../logo/moai-logo.png"
+                    alt="MOAI"><span>MOAI</span></a>
+            <ul class="nav-links">
+                <li><a href="../../index.html">製品一覧</a></li>
+                <li><a href="#features">機能</a></li>
+                <li><a href="#constraints">制約</a></li>
+                <li><a href="#outputs">出力</a></li>
+                <li><a href="#cta" class="nav-cta contact-trigger">お問い合わせ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero hero-product">
+        <div class="container">
+            <div class="hero-content">
+                <div class="breadcrumb fade-in"><a href="../../index.html">MOAI</a><span>›</span><span
+                        class="current">Ship
+                        Scheduling</span></div>
+                <div class="hero-badge fade-in delay-1">🚢 船舶スケジューリング</div>
+                <h1 class="fade-in delay-2">航行スケジュールを<br><span class="gradient-text">最適化</span>し<br>純利益を最大化</h1>
+                <p class="fade-in delay-3">船舶の積載能力、港湾の荷役能力、在庫状況、移動コストを総合的に判断し、最も効率的で収益性の高い航行計画を自動算出。</p>
+                <div class="hero-buttons fade-in delay-4">
+                    <a href="#cta" class="btn-primary">デモを依頼 →</a>
+                    <a href="#features" class="btn-secondary">機能を見る</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-bar fade-in">
+        <div class="container">
+            <div class="stat-item">
+                <div class="stat-number" data-count="6">0</div>
+                <div class="stat-label">制約カテゴリ</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="3">0</div>
+                <div class="stat-label">出力レポート</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number gradient-text">Max</div>
+                <div class="stat-label">純利益最大化</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number gradient-text">T-S</div>
+                <div class="stat-label">時空間ネットワーク</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <div class="features-header">
+                <div class="section-label fade-in">主要機能</div>
+                <h2 class="section-title fade-in delay-1">港湾・船舶・在庫の<br><span class="gradient-text">統合最適化</span></h2>
+                <p class="section-desc fade-in delay-2">複数港間の輸送計画をあらゆる角度から最適化します。</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card fade-in delay-1">
+                    <div class="feature-icon">🚢</div>
+                    <h3>船舶フリート管理</h3>
+                    <p>定期船・スポット船の使い分け。積載容量、航行速度、移動コストを個別管理。</p>
+                </div>
+                <div class="feature-card fade-in delay-2">
+                    <div class="feature-icon">🏗️</div>
+                    <h3>港湾インフラ管理</h3>
+                    <p>バース数、荷役能力上下限、最大保管容量など港湾設備の制約を忠実にモデル化。</p>
+                </div>
+                <div class="feature-card fade-in delay-3">
+                    <div class="feature-icon">📦</div>
+                    <h3>在庫推移管理</h3>
+                    <p>各港の生産・消費量に基づく在庫推移を自動計算。欠品・過剰在庫を防止。</p>
+                </div>
+                <div class="feature-card fade-in delay-4">
+                    <div class="feature-icon">💹</div>
+                    <h3>収益最大化</h3>
+                    <p>荷下収益、早期完了報酬、航行コスト、港湾利用料を総合的に純利益最大化。</p>
+                </div>
+                <div class="feature-card fade-in delay-5">
+                    <div class="feature-icon">🔄</div>
+                    <h3>スポット市場連携</h3>
+                    <p>自社船で対応不可な場合のスポット輸送コストを考慮した全体最適計画。</p>
+                </div>
+                <div class="feature-card fade-in delay-6">
+                    <div class="feature-icon">📊</div>
+                    <h3>時空間ネットワーク図</h3>
+                    <p>縦軸に港、横軸に時間の運航ダイヤグラムで計画全体を直感的に把握。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="constraints" id="constraints">
+        <div class="container">
+            <div class="section-label fade-in">制約対応力</div>
+            <h2 class="section-title fade-in delay-1">海運の<span class="gradient-text">複雑なルール</span>を厳守</h2>
+            <div class="constraints-layout">
+                <div class="constraints-list">
+                    <div class="constraint-item fade-in-left delay-1">
+                        <div class="constraint-check">✓</div>
+                        <div>
+                            <h4>積載制限</h4>
+                            <p>船舶の積載容量を超えない荷役計画を保証</p>
+                        </div>
+                    </div>
+                    <div class="constraint-item fade-in-left delay-2">
+                        <div class="constraint-check">✓</div>
+                        <div>
+                            <h4>接岸制限</h4>
+                            <p>各港のバース数に応じた同時荷役船舶数の制限</p>
+                        </div>
+                    </div>
+                    <div class="constraint-item fade-in-left delay-3">
+                        <div class="constraint-check">✓</div>
+                        <div>
+                            <h4>在庫維持</h4>
+                            <p>最大保管容量の遵守と欠品発生の防止</p>
+                        </div>
+                    </div>
+                    <div class="constraint-item fade-in-left delay-4">
+                        <div class="constraint-check">✓</div>
+                        <div>
+                            <h4>荷役能力制限</h4>
+                            <p>港ごとの最大・最小荷役量の範囲内での計画</p>
+                        </div>
+                    </div>
+                    <div class="constraint-item fade-in-left delay-5">
+                        <div class="constraint-check">✓</div>
+                        <div>
+                            <h4>移動時間制約</h4>
+                            <p>距離と船舶速度に基づく所定移動期間の考慮</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="constraints-visual fade-in-right delay-2">
+                    <div class="constraints-visual-card">
+                        <div class="constraint-gauge">
+                            <div class="gauge-header"><span>積載効率</span><span>94%</span></div>
+                            <div class="gauge-bar">
+                                <div class="gauge-fill blue" data-width="94%" style="width:94%;"></div>
+                            </div>
+                        </div>
+                        <div class="constraint-gauge">
+                            <div class="gauge-header"><span>在庫制約充足</span><span>100%</span></div>
+                            <div class="gauge-bar">
+                                <div class="gauge-fill green" data-width="100%" style="width:100%;"></div>
+                            </div>
+                        </div>
+                        <div class="constraint-gauge">
+                            <div class="gauge-header"><span>純利益向上</span><span>+18%</span></div>
+                            <div class="gauge-bar">
+                                <div class="gauge-fill purple" data-width="80%" style="width:80%;"></div>
+                            </div>
+                        </div>
+                        <div class="constraint-gauge">
+                            <div class="gauge-header"><span>スポット利用削減</span><span>-40%</span></div>
+                            <div class="gauge-bar">
+                                <div class="gauge-fill orange" data-width="60%" style="width:60%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="outputs" id="outputs">
+        <div class="container">
+            <div class="outputs-header">
+                <div class="section-label fade-in">出力結果</div>
+                <h2 class="section-title fade-in delay-1"><span class="gradient-text">3つのレポート</span>で航行計画を把握</h2>
+            </div>
+            <div class="outputs-grid" style="grid-template-columns: repeat(3, 1fr);">
+                <div class="output-card fade-in delay-1">
+                    <div class="output-number">01</div>
+                    <h3>運航スケジュール</h3>
+                    <p>船舶別の港訪問・荷役タイムライン</p>
+                </div>
+                <div class="output-card fade-in delay-2">
+                    <div class="output-number">02</div>
+                    <h3>港湾在庫推移</h3>
+                    <p>各港の在庫レベル変動グラフ</p>
+                </div>
+                <div class="output-card fade-in delay-3">
+                    <div class="output-number">03</div>
+                    <h3>収益・コスト分析</h3>
+                    <p>総収益・総コスト・純利益の内訳</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="cta">
+        <div class="container">
+            <div class="cta-content fade-in">
+                <div class="section-label">お問い合わせ</div>
+                <h2><span class="gradient-text">船舶スケジューリング</span>を、今すぐ始めよう</h2>
+                <p>Ship Schedulingの導入・トライアルに関するご相談はお気軽にどうぞ。</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn-primary contact-trigger">お問い合わせフォームを開く</a>
+                    <a href="../../index.html" class="btn-secondary">製品一覧に戻る</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo"><img src="../../logo/moai-logo.png" alt="MOAI"><span>MOAI</span></div>
+            <div class="footer-text">© 2026 MOAI. All rights reserved.</div>
+        </div>
+    </footer>
+    <script src="../../script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="amber">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UCP | 発電計画最適化（ユニットコミットメント）</title>
+    <meta name="description" content="UCP（ユニットコミットメント）は火力・再エネ発電機の運転スケジュールを最適化し、システム全体の運用コストを最小化します。">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="icon" type="image/png" href="../../logo/moai-logo.png">
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="../../index.html" class="nav-logo"><img src="../../logo/moai-logo.png"
+                    alt="MOAI"><span>MOAI</span></a>
+            <ul class="nav-links">
+                <li><a href="../../index.html">製品一覧</a></li>
+                <li><a href="#features">機能</a></li>
+                <li><a href="#constraints">制約</a></li>
+                <li><a href="#outputs">出力</a></li>
+                <li><a href="#cta" class="nav-cta contact-trigger">お問い合わせ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero hero-product">
+        <div class="container">
+            <div class="hero-content">
+                <div class="breadcrumb fade-in"><a href="../../index.html">MOAI</a><span>›</span><span
+                        class="current">UCP</span>
+                </div>
+                <div class="hero-badge fade-in delay-1">⚡ ユニットコミットメント</div>
+                <h1 class="fade-in delay-2">発電計画を<br><span class="gradient-text">最適化</span>し<br>運用コストを最小化</h1>
+                <p class="fade-in delay-3">火力発電機と再生可能エネルギーの運転スケジュールを最適化。起動・停止コスト、出力制限、需給バランスを考慮した最適運用計画。</p>
+                <div class="hero-buttons fade-in delay-4">
+                    <a href="#cta" class="btn-primary">デモを依頼 →</a>
+                    <a href="#features" class="btn-secondary">機能を見る</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-bar fade-in">
+        <div class="container">
+            <div class="stat-item">
+                <div class="stat-number" data-count="24">0</div>
+                <div class="stat-label">計画期間（時間）</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="5">0</div>
+                <div class="stat-label">制約カテゴリ</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="4">0</div>
+                <div class="stat-label">出力レポート</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number gradient-text">MIP</div>
+                <div class="stat-label">厳密最適化</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <div class="features-header">
+                <div class="section-label fade-in">主要機能</div>
+                <h2 class="section-title fade-in delay-1">火力と再エネの<br><span class="gradient-text">統合運用最適化</span></h2>
+                <p class="section-desc fade-in delay-2">発電機の物理特性と経済性を同時に考慮した運転計画を自動生成。</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card fade-in delay-1">
+                    <div class="feature-icon">🔥</div>
+                    <h3>火力発電機管理</h3>
+                    <p>最小/最大出力、ランプ制約、最低稼働・停止時間など物理特性を詳細設定。</p>
+                </div>
+                <div class="feature-card fade-in delay-2">
+                    <div class="feature-icon">☀️</div>
+                    <h3>再エネ統合</h3>
+                    <p>太陽光・風力の予測最小・最大出力を考慮した統合計画。</p>
+                </div>
+                <div class="feature-card fade-in delay-3">
+                    <div class="feature-icon">💡</div>
+                    <h3>需給バランス</h3>
+                    <p>各期間の電力需要と必要予備力を確実に充足する出力配分。</p>
+                </div>
+                <div class="feature-card fade-in delay-4">
+                    <div class="feature-icon">🔄</div>
+                    <h3>起動パターン管理</h3>
+                    <p>熱間起動・冷間起動など、停止時間に応じた起動コストの差異を考慮。</p>
+                </div>
+                <div class="feature-card fade-in delay-5">
+                    <div class="feature-icon">📉</div>
+                    <h3>コスト特性曲線</h3>
+                    <p>区分線形近似で出力-コスト関係を忠実にモデル化し最小コスト組合せを選定。</p>
+                </div>
+                <div class="feature-card fade-in delay-6">
+                    <div class="feature-icon">📊</div>
+                    <h3>出力積上げグラフ</h3>
+                    <p>各期間の発電機別出力を積み上げ棒グラフで直感的に可視化。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="constraints" id="constraints">
+        <div class="container">
+            <div class="section-label fade-in">制約対応力</div>
+            <h2 class="section-title fade-in delay-1">電力系統の<span class="gradient-text">物理制約</span>を厳守</h2>
+            <div class="constraints-layout">
+                <div class="constraints-list">
+                    <div class="constraint-item fade-in-left delay-1">
+                        <div class="constraint-check">✓</div>
+                        <div>
+                            <h4>需給バランス</h4>
+                            <p>全発電機の出力合計が需要と予備力を充足</p>
+                        </div>
+                    </div>
+                    <div class="constraint-item fade-in-left delay-2">
+                        <div class="constraint-check">✓</div>
+                        <div>
+                            <h4>出力上下限</h4>
+                            <p>各発電機の安全稼働範囲を厳密に遵守</p>
+                        </div>
+                    </div>
+                    <div class="constraint-item fade-in-left delay-3">
+                        <div class="constraint-check">✓</div>
+                        <div>
+                            <h4>ランプ制約</h4>
+                            <p>急激な出力増減を変化制限幅以内に制御</p>
+                        </div>
+                    </div>
+                    <div class="constraint-item fade-in-left delay-4">
+                        <div class="constraint-check">✓</div>
+                        <div>
+                            <h4>時間的制約</h4>
+                            <p>最低稼働・停止時間を満たすスケジューリング</p>
+                        </div>
+                    </div>
+                    <div class="constraint-item fade-in-left delay-5">
+                        <div class="constraint-check">✓</div>
+                        <div>
+                            <h4>コスト構造</h4>
+                            <p>区分線形近似で最安組合せを自動選定</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="constraints-visual fade-in-right delay-2">
+                    <div class="constraints-visual-card">
+                        <div class="constraint-gauge">
+                            <div class="gauge-header"><span>需給充足率</span><span>100%</span></div>
+                            <div class="gauge-bar">
+                                <div class="gauge-fill orange" data-width="100%" style="width:100%;"></div>
+                            </div>
+                        </div>
+                        <div class="constraint-gauge">
+                            <div class="gauge-header"><span>予備力確保率</span><span>100%</span></div>
+                            <div class="gauge-bar">
+                                <div class="gauge-fill blue" data-width="100%" style="width:100%;"></div>
+                            </div>
+                        </div>
+                        <div class="constraint-gauge">
+                            <div class="gauge-header"><span>運用コスト削減</span><span>-15%</span></div>
+                            <div class="gauge-bar">
+                                <div class="gauge-fill green" data-width="85%" style="width:85%;"></div>
+                            </div>
+                        </div>
+                        <div class="constraint-gauge">
+                            <div class="gauge-header"><span>再エネ活用率</span><span>92%</span></div>
+                            <div class="gauge-bar">
+                                <div class="gauge-fill purple" data-width="92%" style="width:92%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="outputs" id="outputs">
+        <div class="container">
+            <div class="outputs-header">
+                <div class="section-label fade-in">出力結果</div>
+                <h2 class="section-title fade-in delay-1"><span class="gradient-text">4つのレポート</span>で発電計画を把握</h2>
+            </div>
+            <div class="outputs-grid" style="grid-template-columns: repeat(4, 1fr);">
+                <div class="output-card fade-in delay-1">
+                    <div class="output-number">01</div>
+                    <h3>運転スケジュール</h3>
+                    <p>ON/OFFの時系列チャート</p>
+                </div>
+                <div class="output-card fade-in delay-2">
+                    <div class="output-number">02</div>
+                    <h3>出力配分計画</h3>
+                    <p>発電機別の出力分担データ</p>
+                </div>
+                <div class="output-card fade-in delay-3">
+                    <div class="output-number">03</div>
+                    <h3>運用コスト分析</h3>
+                    <p>起動コスト・発電コストの内訳</p>
+                </div>
+                <div class="output-card fade-in delay-4">
+                    <div class="output-number">04</div>
+                    <h3>予備力レポート</h3>
+                    <p>各期間の予備力確保状況</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="cta">
+        <div class="container">
+            <div class="cta-content fade-in">
+                <div class="section-label">お問い合わせ</div>
+                <h2><span class="gradient-text">発電計画最適化</span>を、今すぐ始めよう</h2>
+                <p>UCPの導入・トライアルに関するご相談はお気軽にどうぞ。</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn-primary contact-trigger">お問い合わせフォームを開く</a>
+                    <a href="../../index.html" class="btn-secondary">製品一覧に戻る</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo"><img src="../../logo/moai-logo.png" alt="MOAI"><span>MOAI</span></div>
+            <div class="footer-text">© 2026 MOAI. All rights reserved.</div>
+        </div>
+    </footer>
+    <script src="../../script.js"></script>
+</body>
+
+</html>

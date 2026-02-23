@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="purple">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OptPack | パッキング最適化ソルバー</title>
+    <meta name="description" content="OptPackは1D〜3D+時間軸のパッキング問題をメタヒューリスティクスで高速解決する最適化ソルバーです。">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="icon" type="image/png" href="../../logo/moai-logo.png">
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="../../index.html" class="nav-logo"><img src="../../logo/moai-logo.png"
+                    alt="MOAI"><span>MOAI</span></a>
+            <ul class="nav-links">
+                <li><a href="../../index.html">製品一覧</a></li>
+                <li><a href="#features">機能</a></li>
+                <li><a href="#dimensions">次元</a></li>
+                <li><a href="#outputs">出力</a></li>
+                <li><a href="#cta" class="nav-cta contact-trigger">お問い合わせ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero hero-product">
+        <div class="container">
+            <div class="hero-content">
+                <div class="breadcrumb fade-in"><a href="../../index.html">MOAI</a><span>›</span><span
+                        class="current">OptPack</span></div>
+                <div class="hero-badge fade-in delay-1">📐 パッキング最適化</div>
+                <h1 class="fade-in delay-2">パッキング問題を<br><span class="gradient-text">数秒で最適解</span>に<br>導くソルバー</h1>
+                <p class="fade-in delay-3">NP困難なパッキング問題を、MIPソルバーが停止する規模でも高速・高精度に解決。1D〜3D＋時間軸まで幅広く対応。</p>
+                <div class="hero-buttons fade-in delay-4">
+                    <a href="#cta" class="btn-primary">デモを依頼 →</a>
+                    <a href="#features" class="btn-secondary">機能を見る</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-bar fade-in">
+        <div class="container">
+            <div class="stat-item">
+                <div class="stat-number" data-count="4">0</div>
+                <div class="stat-label">対応次元</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="400">0</div>
+                <div class="stat-label">最大アイテム数</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="10">0</div>
+                <div class="stat-label">秒で最適解</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number gradient-text">LB=UB</div>
+                <div class="stat-label">最適性証明</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <div class="features-header">
+                <div class="section-label fade-in">主要機能</div>
+                <h2 class="section-title fade-in delay-1">MIPを超える<br><span class="gradient-text">メタヒューリスティクス</span></h2>
+                <p class="section-desc fade-in delay-2">従来手法が「組合せ爆発」で停止する問題にも安定して高品質な解を提供。</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card fade-in delay-1">
+                    <div class="feature-icon">📏</div>
+                    <h3>1Dパッキング</h3>
+                    <p>重さ・長さに基づくパッキング。FFD等で高速処理。オンライン最適化にも対応。</p>
+                </div>
+                <div class="feature-card fade-in delay-2">
+                    <div class="feature-icon">📦</div>
+                    <h3>2Dパッキング</h3>
+                    <p>幅×高さの平面配置。パレット荷積み、シート材の切り出しに最適。</p>
+                </div>
+                <div class="feature-card fade-in delay-3">
+                    <div class="feature-icon">🧊</div>
+                    <h3>3Dパッキング</h3>
+                    <p>幅×高さ×奥行の空間配置。コンテナ積込み、倉庫空間管理に対応。</p>
+                </div>
+                <div class="feature-card fade-in delay-4">
+                    <div class="feature-icon">⏰</div>
+                    <h3>D次元パッキング</h3>
+                    <p>物理形状に時間軸等を追加した多次元リソース割り当て問題に対応。</p>
+                </div>
+                <div class="feature-card fade-in delay-5">
+                    <div class="feature-icon">🎯</div>
+                    <h3>最適性証明</h3>
+                    <p>LB=UBが一致した場合、数学的にこれ以上改善不可であることを証明。</p>
+                </div>
+                <div class="feature-card fade-in delay-6">
+                    <div class="feature-icon">👁️</div>
+                    <h3>ビジュアライザー</h3>
+                    <p>各ビンにどのアイテムが配置されたかをビン単位で詳細に視覚化。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="constraints" id="dimensions">
+        <div class="container">
+            <div class="section-label fade-in">技術的優位性</div>
+            <h2 class="section-title fade-in delay-1">MIPソルバーを<span class="gradient-text">凌駕する性能</span></h2>
+            <div class="constraints-layout">
+                <div class="constraints-list">
+                    <div class="constraint-item fade-in-left delay-1">
+                        <div class="constraint-check">✓</div>
+                        <div>
+                            <h4>組合せ爆発の回避</h4>
+                            <p>MIPが停止する大規模問題でも安定的に解を算出</p>
+                        </div>
+                    </div>
+                    <div class="constraint-item fade-in-left delay-2">
+                        <div class="constraint-check">✓</div>
+                        <div>
+                            <h4>時間制限内で確実に出力</h4>
+                            <p>数秒〜10秒で数千通りの配置から最適解を探索</p>
+                        </div>
+                    </div>
+                    <div class="constraint-item fade-in-left delay-3">
+                        <div class="constraint-check">✓</div>
+                        <div>
+                            <h4>柔軟なデータ入出力</h4>
+                            <p>JSON/テキスト形式でシステム連携に最適</p>
+                        </div>
+                    </div>
+                    <div class="constraint-item fade-in-left delay-4">
+                        <div class="constraint-check">✓</div>
+                        <div>
+                            <h4>充填率の最大化</h4>
+                            <p>空間利用効率を定量的に評価し継続改善</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="constraints-visual fade-in-right delay-2">
+                    <div class="constraints-visual-card">
+                        <div class="constraint-gauge">
+                            <div class="gauge-header"><span>充填率</span><span>96%</span></div>
+                            <div class="gauge-bar">
+                                <div class="gauge-fill purple" data-width="96%" style="width:96%;"></div>
+                            </div>
+                        </div>
+                        <div class="constraint-gauge">
+                            <div class="gauge-header"><span>計算速度 vs MIP</span><span>100x</span></div>
+                            <div class="gauge-bar">
+                                <div class="gauge-fill blue" data-width="95%" style="width:95%;"></div>
+                            </div>
+                        </div>
+                        <div class="constraint-gauge">
+                            <div class="gauge-header"><span>使用ビン削減</span><span>-18%</span></div>
+                            <div class="gauge-bar">
+                                <div class="gauge-fill green" data-width="82%" style="width:82%;"></div>
+                            </div>
+                        </div>
+                        <div class="constraint-gauge">
+                            <div class="gauge-header"><span>最適性証明率</span><span>87%</span></div>
+                            <div class="gauge-bar">
+                                <div class="gauge-fill orange" data-width="87%" style="width:87%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="outputs" id="outputs">
+        <div class="container">
+            <div class="outputs-header">
+                <div class="section-label fade-in">出力結果</div>
+                <h2 class="section-title fade-in delay-1"><span class="gradient-text">4つの指標</span>で配置品質を評価</h2>
+            </div>
+            <div class="outputs-grid" style="grid-template-columns: repeat(4, 1fr);">
+                <div class="output-card fade-in delay-1">
+                    <div class="output-number">LB</div>
+                    <h3>ロワーバウンド</h3>
+                    <p>理論上の最小ビン数（下界値）</p>
+                </div>
+                <div class="output-card fade-in delay-2">
+                    <div class="output-number">UB</div>
+                    <h3>アッパーバウンド</h3>
+                    <p>現在の最良ビン数（上界値）</p>
+                </div>
+                <div class="output-card fade-in delay-3">
+                    <div class="output-number">%</div>
+                    <h3>充填率</h3>
+                    <p>容器内空間の利用効率</p>
+                </div>
+                <div class="output-card fade-in delay-4">
+                    <div class="output-number">3D</div>
+                    <h3>ビジュアライザー</h3>
+                    <p>ビンごとの配置を視覚化</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="cta">
+        <div class="container">
+            <div class="cta-content fade-in">
+                <div class="section-label">お問い合わせ</div>
+                <h2><span class="gradient-text">パッキング最適化</span>を、今すぐ始めよう</h2>
+                <p>OptPackの導入・トライアルに関するご相談はお気軽にどうぞ。</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn-primary contact-trigger">お問い合わせフォームを開く</a>
+                    <a href="../../index.html" class="btn-secondary">製品一覧に戻る</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo"><img src="../../logo/moai-logo.png" alt="MOAI"><span>MOAI</span></div>
+            <div class="footer-text">© 2026 MOAI. All rights reserved.</div>
+        </div>
+    </footer>
+    <script src="../../script.js"></script>
+</body>
+
+</html>

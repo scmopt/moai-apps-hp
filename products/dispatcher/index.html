@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="blue">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOAI-Dispatcher | 配送最適化ソルバー</title>
+    <meta name="description" content="MOAI-Dispatcherは、複数拠点・車両・顧客の配送ルートを自動最適化し、物流コストを大幅に削減する配送最適化ソルバーです。">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="icon" type="image/png" href="../../logo/moai-logo.png">
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="../../index.html" class="nav-logo"><img src="../../logo/moai-logo.png"
+                    alt="MOAI"><span>MOAI</span></a>
+            <ul class="nav-links">
+                <li><a href="../../index.html">製品一覧</a></li>
+                <li><a href="#features">機能</a></li>
+                <li><a href="#constraints">制約対応</a></li>
+                <li><a href="#outputs">出力</a></li>
+                <li><a href="#cta" class="nav-cta contact-trigger">お問い合わせ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero hero-product" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="breadcrumb fade-in"><a href="../../index.html">MOAI</a><span>›</span><span
+                        class="current">Dispatcher</span></div>
+                <div class="hero-badge fade-in delay-1">🚚 配送最適化ソルバー</div>
+                <h1 class="fade-in delay-2">配送コストを<br><span class="gradient-text">劇的に削減</span>する<br>最適化ソルバー</h1>
+                <p class="fade-in delay-3">複数拠点・複数車種・複雑な時間制約に対応。あらゆる配送計画を瞬時に最適化し、コスト削減とサービス品質の向上を同時に実現します。</p>
+                <div class="hero-buttons fade-in delay-4">
+                    <a href="#cta" class="btn-primary">デモを依頼 →</a>
+                    <a href="#features" class="btn-secondary">機能を見る</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-bar fade-in">
+        <div class="container">
+            <div class="stat-item">
+                <div class="stat-number" data-count="300">0</div>
+                <div class="stat-label">最大訪問先数</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="50">0</div>
+                <div class="stat-label">車両種別数</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="6">0</div>
+                <div class="stat-label">制約カテゴリ</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="5">0</div>
+                <div class="stat-label">出力レポート</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <div class="features-header">
+                <div class="section-label fade-in">主要機能</div>
+                <h2 class="section-title fade-in delay-1">あらゆる配送シナリオに<span class="gradient-text">柔軟に対応</span></h2>
+                <p class="section-desc fade-in delay-2">現実のあらゆる配送条件をモデリングできます。</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card fade-in delay-1">
+                    <div class="feature-icon">🏢</div>
+                    <h3>マルチデポ対応</h3>
+                    <p>複数の配送拠点を設定し、稼働時間・作業時間を個別管理。広域配送ネットワークに最適。</p>
+                </div>
+                <div class="feature-card fade-in delay-2">
+                    <div class="feature-icon">🚛</div>
+                    <h3>車両フリート管理</h3>
+                    <p>車種ごとの積載量・コスト・走行特性を設定。混合車両編成の最適化を実現。</p>
+                </div>
+                <div class="feature-card fade-in delay-3">
+                    <div class="feature-icon">🕐</div>
+                    <h3>時間枠スケジューリング</h3>
+                    <p>受入時刻・準備完了時刻・車両稼働時間まで考慮した精密なスケジューリング。</p>
+                </div>
+                <div class="feature-card fade-in delay-4">
+                    <div class="feature-icon">📊</div>
+                    <h3>多品目積載管理</h3>
+                    <p>重量・容積など品目別の配送量・集荷量を管理し、積載制限を厳守。</p>
+                </div>
+                <div class="feature-card fade-in delay-5">
+                    <div class="feature-icon">🔄</div>
+                    <h3>途中再積み込み</h3>
+                    <p>指定拠点での荷物補充・荷下ろしに対応。長距離・大量配送でも効率的。</p>
+                </div>
+                <div class="feature-card fade-in delay-6">
+                    <div class="feature-icon">💰</div>
+                    <h3>詳細コスト計算</h3>
+                    <p>固定費・距離単価・時間単価・残業費用まで、精密なコスト最適化を実行。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="constraints" id="constraints">
+        <div class="container">
+            <div class="section-label fade-in">制約対応力</div>
+            <h2 class="section-title fade-in delay-1">現実の<span class="gradient-text">あらゆる制約</span>に対応</h2>
+            <div class="constraints-layout">
+                <div class="constraints-list">
+                    <div class="constraint-item fade-in-left delay-1">
+                        <div class="constraint-check">✓</div>
+                        <div>
+                            <h4>時間枠の遵守</h4>
+                            <p>受入時間内・車両稼働時間内での作業を保証</p>
+                        </div>
+                    </div>
+                    <div class="constraint-item fade-in-left delay-2">
+                        <div class="constraint-check">✓</div>
+                        <div>
+                            <h4>積載制限の厳守</h4>
+                            <p>走行中のどの時点でも最大積載量を超過しない</p>
+                        </div>
+                    </div>
+                    <div class="constraint-item fade-in-left delay-3">
+                        <div class="constraint-check">✓</div>
+                        <div>
+                            <h4>訪問必須条件</h4>
+                            <p>必須フラグの訪問先は必ずルートに組み込み</p>
+                        </div>
+                    </div>
+                    <div class="constraint-item fade-in-left delay-4">
+                        <div class="constraint-check">✓</div>
+                        <div>
+                            <h4>拠点間移動ルール</h4>
+                            <p>指定の出発・帰還拠点を厳密に遵守</p>
+                        </div>
+                    </div>
+                    <div class="constraint-item fade-in-left delay-5">
+                        <div class="constraint-check">✓</div>
+                        <div>
+                            <h4>連続稼働制限</h4>
+                            <p>最大稼働時間・走行距離制限を超えないルート設計</p>
+                        </div>
+                    </div>
+                    <div class="constraint-item fade-in-left delay-6">
+                        <div class="constraint-check">✓</div>
+                        <div>
+                            <h4>途中補充ロジック</h4>
+                            <p>指定回数内で拠点に立ち寄り再積み込み可能</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="constraints-visual fade-in-right delay-2">
+                    <div class="constraints-visual-card">
+                        <div class="constraint-gauge">
+                            <div class="gauge-header"><span>時間枠充足率</span><span>100%</span></div>
+                            <div class="gauge-bar">
+                                <div class="gauge-fill blue" data-width="100%" style="width:100%;"></div>
+                            </div>
+                        </div>
+                        <div class="constraint-gauge">
+                            <div class="gauge-header"><span>積載率（最適化後）</span><span>87%</span></div>
+                            <div class="gauge-bar">
+                                <div class="gauge-fill green" data-width="87%" style="width:87%;"></div>
+                            </div>
+                        </div>
+                        <div class="constraint-gauge">
+                            <div class="gauge-header"><span>車両稼働効率</span><span>92%</span></div>
+                            <div class="gauge-bar">
+                                <div class="gauge-fill purple" data-width="92%" style="width:92%;"></div>
+                            </div>
+                        </div>
+                        <div class="constraint-gauge">
+                            <div class="gauge-header"><span>コスト削減率</span><span>23%</span></div>
+                            <div class="gauge-bar">
+                                <div class="gauge-fill orange" data-width="23%" style="width:23%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="outputs" id="outputs">
+        <div class="container">
+            <div class="outputs-header">
+                <div class="section-label fade-in">出力結果</div>
+                <h2 class="section-title fade-in delay-1"><span class="gradient-text">5つのレポート</span>で最適計画を完全把握</h2>
+            </div>
+            <div class="outputs-grid">
+                <div class="output-card fade-in delay-1">
+                    <div class="output-number">01</div>
+                    <h3>最適配送ルート</h3>
+                    <p>各車両の訪問順序を可視化</p>
+                </div>
+                <div class="output-card fade-in delay-2">
+                    <div class="output-number">02</div>
+                    <h3>スケジュール</h3>
+                    <p>到着・作業の詳細時刻表</p>
+                </div>
+                <div class="output-card fade-in delay-3">
+                    <div class="output-number">03</div>
+                    <h3>積載推移</h3>
+                    <p>各地点での荷物量・積載率</p>
+                </div>
+                <div class="output-card fade-in delay-4">
+                    <div class="output-number">04</div>
+                    <h3>総コスト内訳</h3>
+                    <p>固定費・走行費・残業費の分解</p>
+                </div>
+                <div class="output-card fade-in delay-5">
+                    <div class="output-number">05</div>
+                    <h3>稼働実績</h3>
+                    <p>走行距離・稼働時間・残業</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="cta">
+        <div class="container">
+            <div class="cta-content fade-in">
+                <div class="section-label">お問い合わせ</div>
+                <h2><span class="gradient-text">配送最適化</span>を、今すぐ始めよう</h2>
+                <p>MOAI-Dispatcherの導入・トライアルに関するご相談はお気軽に。貴社の配送データによる最適化デモも承ります。</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn-primary contact-trigger">お問い合わせフォームを開く</a>
+                    <a href="../../index.html" class="btn-secondary">製品一覧に戻る</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo"><img src="../../logo/moai-logo.png" alt="MOAI"><span>MOAI</span></div>
+            <div class="footer-text">© 2026 MOAI. All rights reserved.</div>
+        </div>
+    </footer>
+    <script src="../../script.js"></script>
+</body>
+
+</html>
