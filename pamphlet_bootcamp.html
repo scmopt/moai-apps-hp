@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOAI Bootcamp パンフレット</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: #fdfdfd;
+            color: #334155;
+            line-height: 1.5;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+            position: relative;
+        }
+
+        /* ---- HEADER ---- */
+        .header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%);
+            color: #fff;
+            padding: 8mm 12mm 6mm 12mm;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -10%;
+            width: 120%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 5mm;
+            z-index: 1;
+        }
+
+        .header-left img {
+            height: 14mm;
+            filter: invert(1);
+        }
+
+        .header-title h1 {
+            font-size: 20pt;
+            font-weight: 900;
+            letter-spacing: 0.1em;
+            line-height: 1.1;
+        }
+
+        .header-title .sub {
+            font-size: 8pt;
+            color: #93c5fd;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            margin-top: 1mm;
+        }
+
+        .header-badge {
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 2mm 5mm;
+            text-align: right;
+        }
+
+        .header-badge .label {
+            font-size: 6pt;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #93c5fd;
+            display: block;
+        }
+
+        .header-badge .value {
+            font-size: 9pt;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        /* ---- MAIN ---- */
+        .main-content {
+            flex: 1;
+            padding: 6mm 10mm 4mm 10mm;
+            display: flex;
+            flex-direction: column;
+            gap: 4mm;
+        }
+
+        /* Tagline */
+        .tagline-box {
+            background: #f8fafc;
+            border-left: 5px solid #2563eb;
+            padding: 4mm 6mm;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.02);
+        }
+
+        .tagline-box h2 {
+            font-size: 11pt;
+            color: #1e3a8a;
+            font-weight: 800;
+            margin-bottom: 1.5mm;
+        }
+
+        .tagline-box p {
+            font-size: 8.5pt;
+            color: #475569;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        /* Journey Timeline */
+        .journey-section h3 {
+            font-size: 10pt;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 3mm;
+            display: flex;
+            align-items: center;
+            gap: 2mm;
+        }
+
+        .journey-section h3::before {
+            content: '';
+            display: block;
+            width: 4mm;
+            height: 1mm;
+            background: #2563eb;
+        }
+
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 3mm;
+        }
+
+        .day-card {
+            display: grid;
+            grid-template-columns: 24mm 1fr;
+            gap: 4mm;
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 3mm 4mm;
+            position: relative;
+        }
+
+        .day-card .day-label {
+            background: #eff6ff;
+            color: #2563eb;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            padding: 2mm;
+        }
+
+        .day-card .day-label .nr {
+            font-size: 14pt;
+            font-weight: 900;
+        }
+
+        .day-card .day-label .txt {
+            font-size: 6pt;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .day-content h4 {
+            font-size: 8.5pt;
+            font-weight: 800;
+            color: #1e3a8a;
+            margin-bottom: 1mm;
+        }
+
+        .day-content .desc {
+            font-size: 7pt;
+            color: #64748b;
+            margin-bottom: 2mm;
+        }
+
+        .day-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3mm;
+        }
+
+        .day-item {
+            background: #f1f5f9;
+            padding: 2mm 3mm;
+            border-radius: 4px;
+        }
+
+        .day-item span {
+            display: block;
+            font-size: 6.5pt;
+            font-weight: 700;
+            color: #475569;
+            margin-bottom: 0.5mm;
+        }
+
+        .day-item p {
+            font-size: 6.5pt;
+            color: #64748b;
+            line-height: 1.4;
+        }
+
+        /* Tool Grid */
+        .tools-section {
+            background: #0f172a;
+            border-radius: 8px;
+            padding: 4mm 6mm;
+            color: #fff;
+        }
+
+        .tools-section h3 {
+            font-size: 8pt;
+            font-weight: 700;
+            color: #93c5fd;
+            margin-bottom: 3mm;
+            text-align: center;
+            letter-spacing: 0.1em;
+        }
+
+        .tool-icons {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 3mm;
+        }
+
+        .tool-tag {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 1mm 3mm;
+            border-radius: 4px;
+            font-size: 6.5pt;
+            font-weight: 500;
+        }
+
+        /* Bottom Row */
+        .bottom-row {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 6mm;
+        }
+
+        .faq-col h3 {
+            font-size: 9pt;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 3mm;
+        }
+
+        .faq-item {
+            margin-bottom: 2.5mm;
+        }
+
+        .faq-q {
+            font-size: 7.5pt;
+            font-weight: 700;
+            color: #2563eb;
+            margin-bottom: 0.5mm;
+        }
+
+        .faq-a {
+            font-size: 7pt;
+            color: #475569;
+            line-height: 1.4;
+        }
+
+        .target-col {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-radius: 8px;
+            padding: 4mm 5mm;
+            border: 1px solid #bae6fd;
+        }
+
+        .target-col h3 {
+            font-size: 9pt;
+            font-weight: 800;
+            color: #0369a1;
+            margin-bottom: 3mm;
+        }
+
+        .target-list {
+            list-style: none;
+        }
+
+        .target-list li {
+            font-size: 7.5pt;
+            color: #0c4a6e;
+            padding-left: 5mm;
+            position: relative;
+            margin-bottom: 2mm;
+            line-height: 1.4;
+        }
+
+        .target-list li::before {
+            content: '★';
+            position: absolute;
+            left: 0;
+            color: #0ea5e9;
+        }
+
+        /* ---- FOOTER ---- */
+        .footer {
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            padding: 5mm 12mm;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer-left {
+            display: flex;
+            align-items: center;
+            gap: 4mm;
+        }
+
+        .footer-left img {
+            height: 8mm;
+            opacity: 0.8;
+        }
+
+        .footer-info {
+            font-size: 7pt;
+            color: #64748b;
+        }
+
+        .footer-info strong {
+            color: #1e293b;
+            display: block;
+            margin-bottom: 0.5mm;
+        }
+
+        .footer-right {
+            text-align: right;
+        }
+
+        .footer-right p {
+            font-size: 6pt;
+            color: #94a3b8;
+        }
+
+        .accent-color {
+            color: #2563eb;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <div class="header">
+            <div class="header-left">
+                <img src="logo/moai-logo.png" alt="MOAI Logo">
+                <div class="header-title">
+                    <h1>MOAI Bootcamp</h1>
+                    <div class="sub">Enterprise AI Acceleration Protocol — エンタープライズAI加速プロトコル</div>
+                </div>
+            </div>
+            <div class="header-badge">
+                <span class="label">Duration</span>
+                <span class="value">3-Day Intensive</span>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="tagline-box">
+                <h2>AI実装の「死の谷」を3日間で飛び越える</h2>
+                <p>MOAI Bootcampは、ドメイン知識の構造化から最適化エンジンの構築、そして実用的なUIの生成までを3日間で完結させる超高速プロトタイプ開発プログラムです。
+                    単なるPoCで終わらせない、現場で「動く」システムのプロトタイプをその場で作り上げます。</p>
+            </div>
+
+            <div class="journey-section">
+                <h3>The 3-Day Journey</h3>
+                <div class="timeline">
+                    <!-- Day 1 -->
+                    <div class="day-card">
+                        <div class="day-label">
+                            <span class="txt">Day</span>
+                            <span class="nr">01</span>
+                        </div>
+                        <div class="day-content">
+                            <h4>Foundational Alignment & Structuralization</h4>
+                            <p class="desc">現場の暗黙知を抽出し、AIが扱える「型」へと変換します。</p>
+                            <div class="day-grid">
+                                <div class="day-item">
+                                    <span>Expert Interview</span>
+                                    <p>ドメインエキスパートへのヒアリングにより、理想的な思考プロセスと例外パターンを特定。</p>
+                                </div>
+                                <div class="day-item">
+                                    <span>Pydantic Modeling</span>
+                                    <p>ビジネスルールをバリデーション付きのデータモデル（Pydantic）として定義し、基盤を構築。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 2 -->
+                    <div class="day-card">
+                        <div class="day-label">
+                            <span class="txt">Day</span>
+                            <span class="nr">02</span>
+                        </div>
+                        <div class="day-content">
+                            <h4>Optimization Strategy & Engine Development</h4>
+                            <p class="desc">実データに基づき、制約を満たす現実的な解を導くエンジンを開発します。</p>
+                            <div class="day-grid">
+                                <div class="day-item">
+                                    <span>Solver Selection</span>
+                                    <p>問題の特性に合わせ、AMPLや商用/OSソルバー（Gurobi, HiGHS等）から最適な手法を選定。</p>
+                                </div>
+                                <div class="day-item">
+                                    <span>Engine Validation</span>
+                                    <p>本番規模のデータでスケーラビリティを確認し、解の妥当性をエキスパートと同席で検証。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 3 -->
+                    <div class="day-card">
+                        <div class="day-label">
+                            <span class="txt">Day</span>
+                            <span class="nr">03</span>
+                        </div>
+                        <div class="day-content">
+                            <h4>Agentic UI Generation & Integration</h4>
+                            <p class="desc">業務担当者が自ら操作可能な「完成したアプリケーション」として統合します。</p>
+                            <div class="day-grid">
+                                <div class="day-item">
+                                    <span>Streamlit Auto-Gen</span>
+                                    <p>Coding Agentを活用し、データモデルからCRUD機能を備えたWeb UIを動的に生成。</p>
+                                </div>
+                                <div class="day-item">
+                                    <span>Human-in-the-loop</span>
+                                    <p>AIの最適解に対する人間の微調整機能を組み込み、最終的なビジネス判断を可能に。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tools-section">
+                <h3>ADVANCED TOOLSTACK</h3>
+                <div class="tool-icons">
+                    <div class="tool-tag">Antigravity (Agent)</div>
+                    <div class="tool-tag">Pydantic</div>
+                    <div class="tool-tag">AMPL</div>
+                    <div class="tool-tag">Streamlit</div>
+                    <div class="tool-tag">AGI4OPT / Agentic IBP</div>
+                    <div class="tool-tag">Gurobi / HiGHS</div>
+                    <div class="tool-tag">FastAPI</div>
+                </div>
+            </div>
+
+            <div class="bottom-row">
+                <div class="faq-col">
+                    <h3>Frequently Asked Questions</h3>
+                    <div class="faq-item">
+                        <p class="faq-q">Q. 費用はどのくらいかかりますか？</p>
+                        <p class="faq-a">A. 現在、特定パートナー向けに<b>無料</b>で提供しています。ROIの確信を得てからの投資判断が可能です。</p>
+                    </div>
+                    <div class="faq-item">
+                        <p class="faq-q">Q. 開催場所はどこですか？</p>
+                        <p class="faq-a">A. お客様のオフィス、MOAI Labの拠点、またはオンラインのいずれでも柔軟に対応可能です。</p>
+                    </div>
+                    <div class="faq-item">
+                        <p class="faq-q">Q. どのようなデータが必要ですか？</p>
+                        <p class="faq-a">A. 基本的なクレンジングが済んだ実データ、または業務要件を反映した架空データが使用可能です。</p>
+                    </div>
+                </div>
+                <div class="target-col">
+                    <h3>Who Should Attend?</h3>
+                    <ul class="target-list">
+                        <li><strong>ドメインエキスパート:</strong> 現場の課題と勘所を知る業務責任者（必須）</li>
+                        <li><strong>DX・IT部門:</strong> 最速の社会実装を目指す変革のリーダー</li>
+                        <li><strong>ステークホルダー:</strong> 5〜20名規模で、組織横断的な参加を推奨</li>
+                    </ul>
+                    <p style="font-size: 6pt; margin-top: 3mm; color: #0369a1; font-weight: 600;">※プログラミングスキルは不要です。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-left">
+                <img src="logo/moai-logo.png" alt="MOAI Logo">
+                <div class="footer-info">
+                    <strong>MOAI Lab Inc.</strong>
+                    〒135-0022 東京都江東区三好1-8-3
+                </div>
+            </div>
+            <div class="footer-right">
+                <p>© 2026 MOAI Lab Inc. All rights reserved.</p>
+                <p>https://moai-lab.com</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
