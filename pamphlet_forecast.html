@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOAI-demand-forecaster パンフレット</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: #fff;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+        }
+
+        /* ---- HEADER ---- */
+        .header {
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #1e1b4b 100%);
+            color: #fff;
+            padding: 6mm 10mm 5mm 10mm;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 4mm;
+        }
+
+        .header-left img {
+            height: 11mm;
+            filter: invert(1);
+        }
+
+        .header-title h1 {
+            font-size: 16pt;
+            font-weight: 900;
+            letter-spacing: 0.05em;
+            line-height: 1.2;
+        }
+
+        .header-title .sub {
+            font-size: 7pt;
+            color: #a5b4fc;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            margin-top: 1mm;
+        }
+
+        .header-badge {
+            background: rgba(99, 102, 241, 0.2);
+            border: 1px solid rgba(99, 102, 241, 0.4);
+            border-radius: 20px;
+            padding: 2mm 5mm;
+            font-size: 7pt;
+            font-weight: 600;
+            color: #a5b4fc;
+        }
+
+        /* ---- MAIN ---- */
+        .main-content {
+            flex: 1;
+            padding: 4mm 10mm 2mm 10mm;
+            display: flex;
+            flex-direction: column;
+            gap: 4mm;
+        }
+
+        /* Tagline */
+        .tagline {
+            background: linear-gradient(90deg, #f5f3ff, #f0fdf4);
+            border-left: 4px solid #6366f1;
+            border-radius: 0 8px 8px 0;
+            padding: 3mm 5mm;
+        }
+
+        .tagline p {
+            font-size: 9pt;
+            color: #1e1b4b;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        /* Feature Cards */
+        .features-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3mm;
+        }
+
+        .feature-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 3mm;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .feature-card .icon {
+            font-size: 16pt;
+            margin-bottom: 1.5mm;
+        }
+
+        .feature-card h3 {
+            font-size: 8pt;
+            font-weight: 700;
+            color: #1e1b4b;
+            margin-bottom: 1mm;
+        }
+
+        .feature-card p {
+            font-size: 6.5pt;
+            color: #475569;
+            line-height: 1.4;
+        }
+
+        /* Section title */
+        .section-title {
+            font-size: 9pt;
+            font-weight: 700;
+            color: #1e1b4b;
+            border-bottom: 2px solid #6366f1;
+            padding-bottom: 1.5mm;
+            margin-bottom: 2mm;
+            display: flex;
+            align-items: center;
+            gap: 2mm;
+        }
+
+        /* Screenshots Grid */
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 3mm;
+        }
+
+        .screenshot-item {
+            position: relative;
+        }
+
+        .screenshot-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            border: 1px solid #e2e8f0;
+            display: block;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .screenshot-item.wide {
+            grid-column: 1 / -1;
+        }
+
+        .screenshot-item.wide img {
+            height: 55mm;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .screenshot-item.medium img {
+            height: 40mm;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .screenshot-caption {
+            font-size: 6pt;
+            color: #64748b;
+            text-align: center;
+            margin-top: 1mm;
+            font-weight: 500;
+        }
+
+        /* Info Row */
+        .info-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4mm;
+        }
+
+        .info-col h3 {
+            font-size: 8.5pt;
+            font-weight: 700;
+            color: #1e1b4b;
+            margin-bottom: 2mm;
+            display: flex;
+            align-items: center;
+            gap: 2mm;
+        }
+
+        .info-col h3 .dot {
+            width: 2.5mm;
+            height: 2.5mm;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #6366f1, #818cf8);
+            flex-shrink: 0;
+        }
+
+        .info-col ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-col ul li {
+            font-size: 7.5pt;
+            color: #334155;
+            line-height: 1.6;
+            padding: 0.5mm 0;
+            padding-left: 4mm;
+            position: relative;
+        }
+
+        .info-col ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            top: 0.5mm;
+            color: #6366f1;
+            font-weight: 700;
+        }
+
+        /* ---- FOOTER ---- */
+        .footer {
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #1e1b4b 100%);
+            color: #fff;
+            padding: 4mm 10mm;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer-left {
+            display: flex;
+            align-items: center;
+            gap: 3mm;
+        }
+
+        .footer-left img {
+            height: 7mm;
+            filter: invert(1);
+        }
+
+        .footer-company {
+            font-size: 8pt;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-address {
+            font-size: 6.5pt;
+            color: #c7d2fe;
+        }
+
+        .footer-right {
+            font-size: 6pt;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+
+        <!-- HEADER -->
+        <div class="header">
+            <div class="header-left">
+                <img src="logo/moai-logo.png" alt="MOAI Logo">
+                <div class="header-title">
+                    <h1>MOAI-demand-forecaster</h1>
+                    <div class="sub">Demand Forecasting & Time Series Analysis — 需要予測・時系列分析システム</div>
+                </div>
+            </div>
+            <div class="header-badge">📈 需要予測</div>
+        </div>
+
+        <!-- MAIN -->
+        <div class="main-content">
+
+            <!-- Tagline -->
+            <div class="tagline">
+                <p>限られたデータから未来を読み解く。過去の実績と多様な変動要因（天候・販促・属性）を統合解析し、<br>
+                    高精度な需要予測と寄与度分析で、最適な在庫計画や販売戦略の立案を強力に支援します。</p>
+            </div>
+
+            <!-- Feature Cards -->
+            <div class="features-row">
+                <div class="feature-card">
+                    <div class="icon">📊</div>
+                    <h3>時系列データ管理</h3>
+                    <p>商品・点ごとの実績データを一元管理し、予測の基盤を構築</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🔍</div>
+                    <h3>多角的な要因分析</h3>
+                    <p>固定属性、将来予定、実績観測情報の3カテゴリで要因を統合</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📈</div>
+                    <h3>高度な評価尺度</h3>
+                    <p>MAE, RMSEからWQLまで、目的に応じた多彩な指標で精度を検証</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🤖</div>
+                    <h3>AIモデル最適化</h3>
+                    <p>Deep Learningを含む複数のアルゴリズムから最適なモデルを自動選定</p>
+                </div>
+            </div>
+
+            <!-- Screenshots Section -->
+            <div class="section-title">画面イメージ</div>
+            <div class="screenshots-grid">
+                <div class="screenshot-item wide">
+                    <img src="figures/fore-1.png" alt="予測結果視覚化">
+                    <div class="screenshot-caption">需要予測・視覚化エディタ（実績と予測の時系列比較）</div>
+                </div>
+                <div class="screenshot-item medium">
+                    <img src="figures/fore-2.png" alt="データ詳細">
+                    <div class="screenshot-caption">予測結果詳細テーブル（分位点別予測値の確認）</div>
+                </div>
+                <div class="screenshot-item medium">
+                    <img src="figures/fore-3.png" alt="特徴量重要度">
+                    <div class="screenshot-caption">特徴量重要度分析（要因ごとの予測への寄与度）</div>
+                </div>
+            </div>
+
+            <!-- Info Row -->
+            <div class="info-row">
+                <div class="info-col">
+                    <h3><span class="dot"></span> システムの出力結果</h3>
+                    <ul>
+                        <li>将来期間における商品・拠点別の需要予測値</li>
+                        <li>キャンペーンや気温などの要因寄与度分析</li>
+                        <li>誤差率（MAE, WAPE等）による予測モデル精度</li>
+                        <li>過去実績からの乖離を検知する異常値レポート</li>
+                    </ul>
+                </div>
+                <div class="info-col">
+                    <h3><span class="dot"></span> 主要な評価尺度（メトリクス）</h3>
+                    <ul>
+                        <li>MAE / RMSE: 誤差の絶対量による基本評価</li>
+                        <li>WAPE / WQL: ビジネスインパクト重視の重み付け評価</li>
+                        <li>MAPE / SMAPE: スケールの異なる系列間の比較評価</li>
+                        <li>MASE / RMSSE: ナイーブ予測基準の相対精度評価</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <div class="footer-left">
+                <img src="logo/moai-logo.png" alt="MOAI Logo">
+                <div>
+                    <div class="footer-company">MOAI Lab Inc.</div>
+                    <div class="footer-address">〒135-0022 東京都江東区三好1-8-3</div>
+                </div>
+            </div>
+            <div class="footer-right">© 2026 MOAI Lab Inc. All rights reserved.</div>
+        </div>
+
+    </div>
+</body>
+
+</html>

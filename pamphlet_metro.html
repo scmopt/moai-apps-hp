@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOAI-Vehicle-Scheduler パンフレット</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: #fff;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+        }
+
+        /* ---- HEADER ---- */
+        .header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%);
+            color: #fff;
+            padding: 6mm 10mm 5mm 10mm;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 4mm;
+        }
+
+        .header-left img {
+            height: 11mm;
+            filter: invert(1);
+        }
+
+        .header-title h1 {
+            font-size: 16pt;
+            font-weight: 900;
+            letter-spacing: 0.05em;
+            line-height: 1.2;
+        }
+
+        .header-title .sub {
+            font-size: 7pt;
+            color: #93c5fd;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            margin-top: 1mm;
+        }
+
+        .header-badge {
+            background: rgba(59, 130, 246, 0.2);
+            border: 1px solid rgba(59, 130, 246, 0.4);
+            border-radius: 20px;
+            padding: 2mm 5mm;
+            font-size: 7pt;
+            font-weight: 600;
+            color: #93c5fd;
+        }
+
+        /* ---- MAIN ---- */
+        .main-content {
+            flex: 1;
+            padding: 3mm 8mm 2mm 8mm;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5mm;
+        }
+
+        /* Tagline */
+        .tagline {
+            background: linear-gradient(90deg, #eff6ff, #f0fdf4);
+            border-left: 3px solid #3b82f6;
+            border-radius: 0 6px 6px 0;
+            padding: 2.5mm 4mm;
+        }
+
+        .tagline p {
+            font-size: 8pt;
+            color: #1e3a5f;
+            line-height: 1.5;
+            font-weight: 500;
+        }
+
+        /* Feature Cards */
+        .features-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2mm;
+        }
+
+        .feature-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+            padding: 2.5mm 2.5mm;
+            text-align: center;
+        }
+
+        .feature-card .icon {
+            font-size: 14pt;
+            margin-bottom: 1mm;
+        }
+
+        .feature-card h3 {
+            font-size: 7pt;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin-bottom: 0.5mm;
+        }
+
+        .feature-card p {
+            font-size: 6pt;
+            color: #64748b;
+            line-height: 1.4;
+        }
+
+        /* Section title */
+        .section-title {
+            font-size: 8pt;
+            font-weight: 700;
+            color: #1e3a5f;
+            border-bottom: 2px solid #3b82f6;
+            padding-bottom: 1mm;
+            margin-bottom: 1.5mm;
+            display: flex;
+            align-items: center;
+            gap: 2mm;
+        }
+
+        .section-title .icon {
+            font-size: 10pt;
+        }
+
+        /* Screenshots Grid */
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 2mm;
+        }
+
+        .screenshot-item {
+            position: relative;
+        }
+
+        .screenshot-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 3px;
+            border: 1px solid #e2e8f0;
+            display: block;
+        }
+
+        .screenshot-item.tall img {
+            max-height: 38mm;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .screenshot-item.wide {
+            grid-column: 1 / -1;
+        }
+
+        .screenshot-item.wide img {
+            max-height: 33mm;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .screenshot-item.wide.route-detail img {
+            height: 48mm;
+            max-height: none;
+        }
+
+        .screenshot-caption {
+            font-size: 5.5pt;
+            color: #64748b;
+            text-align: center;
+            margin-top: 0.5mm;
+            font-weight: 500;
+        }
+
+        /* Info Row */
+        .info-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3mm;
+        }
+
+        .info-col h3 {
+            font-size: 7.5pt;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin-bottom: 1.5mm;
+            display: flex;
+            align-items: center;
+            gap: 1.5mm;
+        }
+
+        .info-col h3 .dot {
+            width: 2mm;
+            height: 2mm;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6, #06b6d4);
+            flex-shrink: 0;
+        }
+
+        .info-col ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-col ul li {
+            font-size: 6.5pt;
+            color: #475569;
+            line-height: 1.5;
+            padding: 0.5mm 0;
+            padding-left: 3.5mm;
+            position: relative;
+        }
+
+        .info-col ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 0.5mm;
+            color: #3b82f6;
+            font-weight: 700;
+            font-size: 6.5pt;
+        }
+
+        /* ---- FOOTER ---- */
+        .footer {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%);
+            color: #fff;
+            padding: 3mm 10mm;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer-left {
+            display: flex;
+            align-items: center;
+            gap: 3mm;
+        }
+
+        .footer-left img {
+            height: 7mm;
+            filter: invert(1);
+        }
+
+        .footer-company {
+            font-size: 7pt;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-address {
+            font-size: 6pt;
+            color: #94a3b8;
+        }
+
+        .footer-right {
+            font-size: 5.5pt;
+            color: #64748b;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+
+        <!-- HEADER -->
+        <div class="header">
+            <div class="header-left">
+                <img src="logo/moai-logo.png" alt="MOAI Logo">
+                <div class="header-title">
+                    <h1>MOAI-Vehicle-Scheduler</h1>
+                    <div class="sub">MEta Truck Routing Optimizer — 配送計画最適化システム METRO</div>
+                </div>
+            </div>
+            <div class="header-badge">🚛 配送最適化</div>
+        </div>
+
+        <!-- MAIN -->
+        <div class="main-content">
+
+            <!-- Tagline -->
+            <div class="tagline">
+                <p>複数車両の配送・集荷・拠点間輸送を一括最適化。積載容量・稼働時間・スキルマッチング・法定休憩など、<br>現場の複雑な制約をすべて考慮し、総コスト・移動距離を最小化する運行計画を自動作成します。</p>
+            </div>
+
+            <!-- Feature Cards -->
+            <div class="features-row">
+                <div class="feature-card">
+                    <div class="icon">🚛</div>
+                    <h3>車両フリート管理</h3>
+                    <p>積載容量・稼働時間・<br>出発/帰還拠点を個別設定</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📦</div>
+                    <h3>ジョブ＆シップメント</h3>
+                    <p>配送・集荷の単一案件と<br>拠点間輸送に対応</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🔧</div>
+                    <h3>スキルマッチング</h3>
+                    <p>資格や条件に応じた<br>最適な車両割り当て</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">☕</div>
+                    <h3>休憩プラン管理</h3>
+                    <p>法定休憩時間を<br>ルートに自動組み込み</p>
+                </div>
+            </div>
+
+            <!-- Screenshots Section -->
+            <div class="section-title"><span class="icon">📸</span> 画面イメージ</div>
+            <div class="screenshots-grid">
+                <div class="screenshot-item tall">
+                    <img src="figures/図5.png" alt="ルートマップ概要">
+                    <div class="screenshot-caption">ルートマップ概要</div>
+                </div>
+                <div class="screenshot-item tall">
+                    <img src="figures/図4.png" alt="ジョブデータ管理">
+                    <div class="screenshot-caption">ジョブデータ管理画面</div>
+                </div>
+                <div class="screenshot-item wide route-detail">
+                    <img src="figures/図6.png" alt="詳細ルート可視化">
+                    <div class="screenshot-caption">詳細ルート可視化（道路形状に沿った経路表示）</div>
+                </div>
+                <div class="screenshot-item wide">
+                    <img src="figures/図7.png" alt="車両スケジュール（ガントチャート）">
+                    <div class="screenshot-caption">車両スケジュール — ガントチャート（移動・作業・休憩を時系列表示）</div>
+                </div>
+            </div>
+
+            <!-- Info Row -->
+            <div class="info-row">
+                <div class="info-col">
+                    <h3><span class="dot"></span> 出力結果</h3>
+                    <ul>
+                        <li>運行概要（総コスト・ルート数・稼働時間・移動距離）</li>
+                        <li>車両別ルート詳細と時系列スケジュール</li>
+                        <li>到着/作業/出発時刻・積載量の作業指示</li>
+                        <li>制約違反チェック（遅延・容量オーバー検出）</li>
+                        <li>地図描画用ルートパスデータ</li>
+                    </ul>
+                </div>
+                <div class="info-col">
+                    <h3><span class="dot"></span> 対応制約条件</h3>
+                    <ul>
+                        <li>訪問可能時間帯（タイムウィンドウ）の遵守</li>
+                        <li>車両積載制限の厳守</li>
+                        <li>スキルマッチング（資格・条件ベース割当）</li>
+                        <li>シップメント輸送順序（積込→荷降ろし）</li>
+                        <li>法定休憩の自動挿入</li>
+                        <li>案件優先度に基づく最適割当</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <div class="footer-left">
+                <img src="logo/moai-logo.png" alt="MOAI Logo">
+                <div>
+                    <div class="footer-company">MOAI Lab Inc.</div>
+                    <div class="footer-address">〒135-0022 東京都江東区三好1-8-3</div>
+                </div>
+            </div>
+            <div class="footer-right">© 2026 MOAI Lab Inc. All rights reserved.</div>
+        </div>
+
+    </div>
+</body>
+
+</html>

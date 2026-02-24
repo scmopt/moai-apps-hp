@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOAI-ship-scheduler パンフレット</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: #fff;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+        }
+
+        /* ---- HEADER ---- */
+        .header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%);
+            color: #fff;
+            padding: 6mm 10mm 5mm 10mm;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 4mm;
+        }
+
+        .header-left img {
+            height: 11mm;
+            filter: invert(1);
+        }
+
+        .header-title h1 {
+            font-size: 16pt;
+            font-weight: 900;
+            letter-spacing: 0.05em;
+            line-height: 1.2;
+        }
+
+        .header-title .sub {
+            font-size: 7pt;
+            color: #93c5fd;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            margin-top: 1mm;
+        }
+
+        .header-badge {
+            background: rgba(59, 130, 246, 0.2);
+            border: 1px solid rgba(59, 130, 246, 0.4);
+            border-radius: 20px;
+            padding: 2mm 5mm;
+            font-size: 7pt;
+            font-weight: 600;
+            color: #93c5fd;
+        }
+
+        /* ---- MAIN ---- */
+        .main-content {
+            flex: 1;
+            padding: 3mm 8mm 2mm 8mm;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5mm;
+        }
+
+        /* Tagline */
+        .tagline {
+            background: linear-gradient(90deg, #eff6ff, #f0fdf4);
+            border-left: 3px solid #3b82f6;
+            border-radius: 0 6px 6px 0;
+            padding: 2.5mm 4mm;
+        }
+
+        .tagline p {
+            font-size: 8pt;
+            color: #1e3a5f;
+            line-height: 1.5;
+            font-weight: 500;
+        }
+
+        /* Feature Cards */
+        .features-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2mm;
+        }
+
+        .feature-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+            padding: 2.5mm 2.5mm;
+            text-align: center;
+        }
+
+        .feature-card .icon {
+            font-size: 14pt;
+            margin-bottom: 1mm;
+        }
+
+        .feature-card h3 {
+            font-size: 7pt;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin-bottom: 0.5mm;
+        }
+
+        .feature-card p {
+            font-size: 6pt;
+            color: #64748b;
+            line-height: 1.4;
+        }
+
+        /* Section title */
+        .section-title {
+            font-size: 8pt;
+            font-weight: 700;
+            color: #1e3a5f;
+            border-bottom: 2px solid #3b82f6;
+            padding-bottom: 1mm;
+            margin-bottom: 1.5mm;
+            display: flex;
+            align-items: center;
+            gap: 2mm;
+        }
+
+        .section-title .icon {
+            font-size: 10pt;
+        }
+
+        /* Screenshots Grid */
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2mm;
+        }
+
+        .screenshot-item {
+            position: relative;
+        }
+
+        .screenshot-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 3px;
+            border: 1px solid #e2e8f0;
+            display: block;
+        }
+
+        .screenshot-item.wide {
+            grid-column: 1 / -1;
+        }
+
+        .screenshot-item.wide img {
+            height: 33mm;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .screenshot-item.route-net img {
+            height: 48mm;
+        }
+
+        .screenshot-caption {
+            font-size: 5.5pt;
+            color: #64748b;
+            text-align: center;
+            margin-top: 0.5mm;
+            font-weight: 500;
+        }
+
+        /* Info Row */
+        .info-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3mm;
+        }
+
+        .info-col h3 {
+            font-size: 7.5pt;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin-bottom: 1.5mm;
+            display: flex;
+            align-items: center;
+            gap: 1.5mm;
+        }
+
+        .info-col h3 .dot {
+            width: 2mm;
+            height: 2mm;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6, #06b6d4);
+            flex-shrink: 0;
+        }
+
+        .info-col ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-col ul li {
+            font-size: 6.5pt;
+            color: #475569;
+            line-height: 1.5;
+            padding: 0.5mm 0;
+            padding-left: 3.5mm;
+            position: relative;
+        }
+
+        .info-col ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 0.5mm;
+            color: #3b82f6;
+            font-weight: 700;
+            font-size: 6.5pt;
+        }
+
+        /* ---- FOOTER ---- */
+        .footer {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%);
+            color: #fff;
+            padding: 3mm 10mm;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer-left {
+            display: flex;
+            align-items: center;
+            gap: 3mm;
+        }
+
+        .footer-left img {
+            height: 7mm;
+            filter: invert(1);
+        }
+
+        .footer-company {
+            font-size: 7pt;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-address {
+            font-size: 6pt;
+            color: #94a3b8;
+        }
+
+        .footer-right {
+            font-size: 5.5pt;
+            color: #64748b;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+
+        <!-- HEADER -->
+        <div class="header">
+            <div class="header-left">
+                <img src="logo/moai-logo.png" alt="MOAI Logo">
+                <div class="header-title">
+                    <h1>MOAI-ship-scheduler</h1>
+                    <div class="sub">Ship Scheduling Optimization — 船舶スケジューリング最適化システム</div>
+                </div>
+            </div>
+            <div class="header-badge">🚢 船舶最適化</div>
+        </div>
+
+        <!-- MAIN -->
+        <div class="main-content">
+
+            <!-- Tagline -->
+            <div class="tagline">
+                <p>船舶の積載能力、各港の荷役能力、在庫状況、および移動コストを総合的に判断。<br>
+                    複雑な制約をすべて考慮し、最も効率的で収益性の高い航行スケジュールを自動算出します。</p>
+            </div>
+
+            <!-- Feature Cards -->
+            <div class="features-row">
+                <div class="feature-card">
+                    <div class="icon">⚙️</div>
+                    <h3>全般設定</h3>
+                    <p>計画期間・商品種別・スポット市場設定を一括定義</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🚢</div>
+                    <h3>船舶マスター</h3>
+                    <p>積載容量・平均速度・移動コストを個別管理</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">⚓</div>
+                    <h3>港湾インフラ</h3>
+                    <p>バース数・荷役量・保管容量を精密に設定</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📉</div>
+                    <h3>在庫プロファイル</h3>
+                    <p>港と船舶の在庫推移を時系列で可視化</p>
+                </div>
+            </div>
+
+            <!-- Screenshots Section -->
+            <div class="section-title"><span class="icon">📸</span> 画面イメージ</div>
+            <div class="screenshots-grid">
+                <div class="screenshot-item wide">
+                    <img src="figures/vsp-1.png" alt="メイン画面・データ管理">
+                    <div class="screenshot-caption">メイン画面：船舶・港湾のマスターデータ管理</div>
+                </div>
+                <div class="screenshot-item wide route-net">
+                    <img src="figures/vsp-2.png" alt="時空間ネットワーク">
+                    <div class="screenshot-caption">時空間ネットワーク：拠点間を移動する船舶の運航ダイヤグラム</div>
+                </div>
+                <div class="screenshot-item">
+                    <img src="figures/vsp-3.png" alt="港在庫プロファイル">
+                    <div class="screenshot-caption">港在庫プロファイル：各港の在庫推移</div>
+                </div>
+                <div class="screenshot-item">
+                    <img src="figures/vsp-4.png" alt="船在庫プロファイル">
+                    <div class="screenshot-caption">船在庫プロファイル：各船舶の在庫推移</div>
+                </div>
+            </div>
+
+            <!-- Info Row -->
+            <div class="info-row">
+                <div class="info-col">
+                    <h3><span class="dot"></span> 出力結果</h3>
+                    <ul>
+                        <li>船舶運航スケジュール（詳細タイムライン）</li>
+                        <li>港湾・船舶の在庫推移（収容・欠品チェック）</li>
+                        <li>総収益（荷下収益・早期完了報酬）</li>
+                        <li>総コスト（移動・港湾利用・スポットコスト）</li>
+                        <li>最適化された最終的な純利益の内訳</li>
+                    </ul>
+                </div>
+                <div class="info-col">
+                    <h3><span class="dot"></span> 適用ルール（制約条件）</h3>
+                    <ul>
+                        <li>船舶積載容量の遵守</li>
+                        <li>港湾接岸可能数（バース数）の制限</li>
+                        <li>最大保管容量の維持および欠品防止</li>
+                        <li>港別荷役能力（最大・最小量）の範囲内運用</li>
+                        <li>船舶ごとの稼働開始時期の考慮</li>
+                        <li>距離・速度に基づく物理的な移動時間の算出</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <div class="footer-left">
+                <img src="logo/moai-logo.png" alt="MOAI Logo">
+                <div>
+                    <div class="footer-company">MOAI Lab Inc.</div>
+                    <div class="footer-address">〒135-0022 東京都江東区三好1-8-3</div>
+                </div>
+            </div>
+            <div class="footer-right">© 2026 MOAI Lab Inc. All rights reserved.</div>
+        </div>
+
+    </div>
+</body>
+
+</html>

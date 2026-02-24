@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOAI Bootcamp | Enterprise AI Acceleration Protocol</title>
+    <meta name="description" content="MOAI Bootcampは、3日間で業務課題をAI×最適化で解決するプロトタイプを構築する実践型プログラムです。">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="icon" type="image/png" href="../../logo/moai-logo.png">
+    <style>
+        /* === Bootcamp-specific Styles === */
+        .timeline {
+            padding: var(--section-padding);
+            position: relative;
+        }
+
+        .timeline-header {
+            text-align: center;
+            margin-bottom: 72px;
+        }
+
+        .timeline-header .section-desc {
+            margin: 0 auto;
+        }
+
+        .timeline-track {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline-track::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 47px;
+            width: 3px;
+            background: linear-gradient(180deg, var(--accent-blue), var(--accent-cyan), var(--accent-green));
+            border-radius: 3px;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 36px;
+            margin-bottom: 48px;
+            position: relative;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-marker {
+            flex-shrink: 0;
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            background: var(--bg-card);
+            border: 2px solid var(--border-accent);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-glow-sm);
+            z-index: 2;
+            transition: all 0.4s ease;
+        }
+
+        .timeline-item:hover .timeline-marker {
+            border-color: var(--accent-blue-light);
+            box-shadow: var(--shadow-glow);
+            transform: scale(1.08);
+        }
+
+        .timeline-marker .day-icon {
+            font-size: 1.8rem;
+            margin-bottom: 2px;
+        }
+
+        .timeline-marker .day-label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: var(--accent-blue-light);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .timeline-content {
+            flex: 1;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 32px;
+            transition: all 0.4s ease;
+        }
+
+        .timeline-item:hover .timeline-content {
+            background: var(--bg-card-hover);
+            border-color: var(--border-accent);
+            box-shadow: var(--shadow-glow-sm);
+        }
+
+        .timeline-content .day-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-blue-light);
+            margin-bottom: 4px;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.01em;
+        }
+
+        .timeline-content p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .timeline-deliverables {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .deliverable-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 100px;
+            padding: 6px 16px;
+            font-size: 0.8rem;
+            color: var(--accent-blue-light);
+            font-weight: 500;
+        }
+
+        .deliverable-tag .tag-icon {
+            font-size: 0.9rem;
+        }
+
+        /* Day 0 Prereq */
+        .prereq-section {
+            padding: 80px 0;
+            background: var(--bg-secondary);
+            position: relative;
+        }
+
+        .prereq-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-accent), transparent);
+        }
+
+        .prereq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+            margin-top: 48px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .prereq-card {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 32px;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .prereq-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-accent);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-glow-sm);
+        }
+
+        .prereq-card .prereq-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .prereq-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .prereq-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Summary Table */
+        .summary-section {
+            padding: var(--section-padding);
+            background: var(--bg-secondary);
+            position: relative;
+        }
+
+        .summary-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-accent), transparent);
+        }
+
+        .summary-table-wrap {
+            max-width: 900px;
+            margin: 48px auto 0;
+            overflow-x: auto;
+        }
+
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+
+        .summary-table th,
+        .summary-table td {
+            padding: 18px 24px;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        .summary-table thead th {
+            background: rgba(59, 130, 246, 0.15);
+            color: var(--accent-blue-light);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid var(--border-accent);
+        }
+
+        .summary-table tbody tr {
+            border-bottom: 1px solid var(--border-subtle);
+            transition: background 0.3s ease;
+        }
+
+        .summary-table tbody tr:hover {
+            background: rgba(59, 130, 246, 0.05);
+        }
+
+        .summary-table td {
+            color: var(--text-secondary);
+        }
+
+        .summary-table td:first-child {
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: var(--section-padding);
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            margin-bottom: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--border-accent);
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 24px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: inherit;
+            text-align: left;
+            gap: 16px;
+        }
+
+        .faq-question .faq-toggle {
+            font-size: 1.2rem;
+            color: var(--accent-blue-light);
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.open .faq-question .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 300px;
+            padding: 0 32px 24px;
+        }
+
+        .faq-answer p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* Activity detail lists */
+        .activity-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .activity-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .activity-list li::before {
+            content: '▸';
+            color: var(--accent-blue-light);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* Participant section */
+        .participants-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .participant-card {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 32px 24px;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .participant-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-accent);
+            transform: translateY(-4px);
+        }
+
+        .participant-card .p-icon {
+            font-size: 2.2rem;
+            margin-bottom: 16px;
+        }
+
+        .participant-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .participant-card p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVIGATION -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="../../index.html" class="nav-logo"><img src="../../logo/moai-logo.png"
+                    alt="MOAI"><span>MOAI</span></a>
+            <ul class="nav-links">
+                <li><a href="../../index.html">製品一覧</a></li>
+                <li><a href="#timeline">プログラム</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#cta" class="nav-cta contact-trigger">お問い合わせ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero hero-product" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="breadcrumb fade-in"><a href="../../index.html">MOAI</a><span>›</span><span
+                        class="current">Bootcamp</span></div>
+                <div class="hero-badge fade-in delay-1">🚀 Enterprise AI Acceleration Protocol</div>
+                <h1 class="fade-in delay-2"><span class="gradient-text">3日間</span>で<br>ビジネス課題を<br>AIで解決する</h1>
+                <p class="fade-in delay-3">
+                    MOAI
+                    Bootcampは、お客様のビジネス課題に対し、AI×数理最適化で動くプロトタイプを3日間で構築する実践型プログラムです。データ構造化から最適化エンジン開発、業務UIの自動生成まで、一気通貫で支援します。
+                </p>
+                <div class="hero-buttons fade-in delay-4">
+                    <a href="#cta" class="btn-primary">Bootcampに申し込む →</a>
+                    <a href="#timeline" class="btn-secondary">プログラムを見る</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS BAR -->
+    <section class="stats-bar fade-in">
+        <div class="container">
+            <div class="stat-item">
+                <div class="stat-number" data-count="3">0</div>
+                <div class="stat-label">日間プログラム</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number gradient-text">無料</div>
+                <div class="stat-label">参加費用</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number gradient-text">5-20</div>
+                <div class="stat-label">推奨参加人数</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number gradient-text">MVP</div>
+                <div class="stat-label">3日後の成果物</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Day 0 Prerequisites -->
+    <section class="prereq-section" id="prereq">
+        <div class="container">
+            <div class="features-header">
+                <div class="section-label fade-in">前提条件</div>
+                <h2 class="section-title fade-in delay-1"><span class="gradient-text">Day 0</span> — 事前準備</h2>
+                <p class="section-desc fade-in delay-2" style="margin:0 auto;">
+                    Bootcamp開始前に、以下2点の準備をお願いします。これにより3日間で最大の成果を引き出せます。
+                </p>
+            </div>
+            <div class="prereq-grid">
+                <div class="prereq-card fade-in delay-3">
+                    <div class="prereq-icon">🎯</div>
+                    <h3>Target（課題の決定）</h3>
+                    <p>解決すべき具体的なビジネス課題が決定している。最適化で改善したい業務プロセスを明確化。</p>
+                </div>
+                <div class="prereq-card fade-in delay-4">
+                    <div class="prereq-icon">📊</div>
+                    <h3>Data（データの準備）</h3>
+                    <p>必要なデータへのアクセス権があり、基本的なクレンジングが済んでいる状態。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="timeline" id="timeline">
+        <div class="container">
+            <div class="timeline-header">
+                <div class="section-label fade-in">3-Day Protocol</div>
+                <h2 class="section-title fade-in delay-1"><span class="gradient-text">3日間</span>のプログラム</h2>
+                <p class="section-desc fade-in delay-2" style="margin:0 auto;">
+                    構造化 → 最適化 → 統合の3ステップで、業務課題を解決するプロトタイプを構築します。
+                </p>
+            </div>
+
+            <div class="timeline-track">
+                <!-- Day 1 -->
+                <div class="timeline-item fade-in delay-1">
+                    <div class="timeline-marker">
+                        <div class="day-icon">🏗️</div>
+                        <div class="day-label">Day 1</div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="day-title">Foundational Alignment & Structuralization</div>
+                        <h3>基盤の合意形成と構造化</h3>
+                        <p>ドメインエキスパートへのヒアリングで暗黙知を抽出し、「理想的な回答」を定義。データをPydanticモデルで型安全に構造化し、入出力のスキーマを確定します。</p>
+                        <ul class="activity-list">
+                            <li>ビジネス課題の理想的な回答・エッジケース・評価指標の策定</li>
+                            <li>Pydanticによる入力・出力データモデルの構築</li>
+                            <li>バリデーションルールの自動化（型制約・ビジネスルール）</li>
+                        </ul>
+                        <div class="timeline-deliverables" style="margin-top: 16px;">
+                            <div class="deliverable-tag"><span class="tag-icon">📋</span> Pydanticデータモデル</div>
+                            <div class="deliverable-tag"><span class="tag-icon">🎯</span> 評価指標</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 2 -->
+                <div class="timeline-item fade-in delay-2">
+                    <div class="timeline-marker">
+                        <div class="day-icon">⚙️</div>
+                        <div class="day-label">Day 2</div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="day-title">Optimization Strategy & Engine Development</div>
+                        <h3>最適化戦略の策定とエンジン開発</h3>
+                        <p>問題を分類し最適なソルバーを選定。実データでスケーラビリティテストを実施し、制約条件の妥当性をドメインエキスパートと確認します。</p>
+                        <ul class="activity-list">
+                            <li>既存ソルバー（VRP, Job-Shop等）のマッピングまたはAMPLカスタムモデルの構築</li>
+                            <li>商用ソルバー / OSS / メタヒューリスティクスの最適な選定</li>
+                            <li>本番規模データでの求解時間測定とチューニング</li>
+                        </ul>
+                        <div class="timeline-deliverables" style="margin-top: 16px;">
+                            <div class="deliverable-tag"><span class="tag-icon">🔧</span> 最適化エンジン</div>
+                            <div class="deliverable-tag"><span class="tag-icon">📈</span> ベンチマーク結果</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 3 -->
+                <div class="timeline-item fade-in delay-3">
+                    <div class="timeline-marker">
+                        <div class="day-icon">🖥️</div>
+                        <div class="day-label">Day 3</div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="day-title">Agentic UI Generation & System Integration</div>
+                        <h3>UI自動生成とシステム統合</h3>
+                        <p>Coding Agentを活用してPydanticモデルからStreamlit
+                            UIを自動生成。最適化エンジンとの接合、結果可視化、Human-in-the-loopの調整機能を統合します。</p>
+                        <ul class="activity-list">
+                            <li>Pydantic-to-UI マッピングによるCRUD画面の自動生成</li>
+                            <li>最適化実行ボタン・プログレスバー・リアルタイムログ表示</li>
+                            <li>ガントチャート・地図・グラフによる結果可視化</li>
+                            <li>Human-in-the-loop：最適解のマニュアル調整と再制約チェック</li>
+                        </ul>
+                        <div class="timeline-deliverables" style="margin-top: 16px;">
+                            <div class="deliverable-tag"><span class="tag-icon">💻</span> Streamlit Web App</div>
+                            <div class="deliverable-tag"><span class="tag-icon">✅</span> ドメインエキスパート検証済み</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SUMMARY TABLE -->
+    <section class="summary-section" id="summary">
+        <div class="container">
+            <div class="features-header">
+                <div class="section-label fade-in">サマリー</div>
+                <h2 class="section-title fade-in delay-1"><span class="gradient-text">3日間</span>の成果物</h2>
+            </div>
+            <div class="summary-table-wrap fade-in delay-2">
+                <table class="summary-table">
+                    <thead>
+                        <tr>
+                            <th>日程</th>
+                            <th>フェーズ</th>
+                            <th>主要な成果物</th>
+                            <th>AI/エージェントの役割</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Day 1</td>
+                            <td>Structure</td>
+                            <td>Pydanticデータモデル</td>
+                            <td>ドメイン知識の構造化・検証</td>
+                        </tr>
+                        <tr>
+                            <td>Day 2</td>
+                            <td>Optimize</td>
+                            <td>AMPL / ソルバーエンジン</td>
+                            <td>数理モデルによる意思決定支援</td>
+                        </tr>
+                        <tr>
+                            <td>Day 3</td>
+                            <td>Interact</td>
+                            <td>Streamlit Web App</td>
+                            <td>コード生成（UI）と統合</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHO SHOULD ATTEND -->
+    <section class="features" id="participants">
+        <div class="container">
+            <div class="features-header">
+                <div class="section-label fade-in">参加対象</div>
+                <h2 class="section-title fade-in delay-1">こんな方に<span class="gradient-text">最適</span>です</h2>
+            </div>
+            <div class="participants-grid">
+                <div class="participant-card fade-in delay-1">
+                    <div class="p-icon">👔</div>
+                    <h3>ビジネス部門</h3>
+                    <p>業務課題を抱え、AI・最適化での効率化を検討している経営層・事業責任者</p>
+                </div>
+                <div class="participant-card fade-in delay-2">
+                    <div class="p-icon">🔬</div>
+                    <h3>ドメインエキスパート</h3>
+                    <p>現場の暗黙知を持ち、最適化の結果が妥当か判断できる業務担当者</p>
+                </div>
+                <div class="participant-card fade-in delay-3">
+                    <div class="p-icon">💻</div>
+                    <h3>IT・エンジニア部門</h3>
+                    <p>プロトタイプの技術検証や、本番化のアーキテクチャ評価を行う技術者</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="faq-header">
+                <div class="section-label fade-in">FAQ</div>
+                <h2 class="section-title fade-in delay-1">よくある<span class="gradient-text">ご質問</span></h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item fade-in delay-1">
+                    <button class="faq-question">
+                        <span>MOAI Bootcampの参加費用は？</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>参加費用は無料です。お客様に費用は発生しません。</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in delay-2">
+                    <button class="faq-question">
+                        <span>どこで開催されますか？</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>ご希望の場所で開催可能です。お客様のオフィスへの訪問、日本各地にあるMOAI Labのオフィス、またはオンラインのいずれでも対応可能です。</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in delay-3">
+                    <button class="faq-question">
+                        <span>どのようなデータを使用しますか？</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>お客様が選択できます。架空のデータを使用することも可能ですし、事前にチームと連携してお客様自身のデータを統合し、Bootcampで使用することも可能です。</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in delay-4">
+                    <button class="faq-question">
+                        <span>どのMOAIプラットフォームを使用できますか？</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>ニーズや関心に合わせて調整します。主にAGI4OPT、Agentic
+                            IBPとそれに含まれる各種最適化ソルバーが頻繁に使用されます。使用するソフトウェアは、扱うユースケースに合わせて決定します。</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in delay-5">
+                    <button class="faq-question">
+                        <span>誰が参加すべきですか？</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>技術者・非技術者を問わず、幅広いユーザーが対象です。業務担当者（ドメインエキスパート）は少なくとも1名参加してください。高度な技術知識やコーディングスキルは必要ありません。ビジネス部門やIT部門など、組織全体から5〜20名のステークホルダーの参加を推奨しています。
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in delay-6">
+                    <button class="faq-question">
+                        <span>期間はどのくらいですか？</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>お客様の都合に合わせて調整可能です。可用性、関心、ユースケースに応じて、最短1日から最長5日まで柔軟に対応します。最適な期間についてご相談ください。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="cta">
+        <div class="container">
+            <div class="cta-content fade-in">
+                <div class="section-label">お問い合わせ</div>
+                <h2><span class="gradient-text">MOAI Bootcamp</span>に参加しよう</h2>
+                <p>3日間であなたのビジネス課題をAI×最適化で解決するプロトタイプを構築します。まずはお気軽にご相談ください。</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn-primary contact-trigger">お問い合わせフォームを開く</a>
+                    <a href="../../index.html" class="btn-secondary">製品一覧に戻る</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo"><img src="../../logo/moai-logo.png" alt="MOAI"><span>MOAI</span></div>
+            <div class="footer-text">© 2026 MOAI. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script src="../../script.js"></script>
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.closest('.faq-item');
+                const isOpen = item.classList.contains('open');
+                // Close all
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                // Toggle current
+                if (!isOpen) item.classList.add('open');
+            });
+        });
+    </script>
+</body>
+
+</html>
