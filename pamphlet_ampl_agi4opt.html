@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMPL & AGI4OPT パンフレット</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: #fdfdfd;
+            color: #334155;
+            line-height: 1.5;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+            position: relative;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%);
+            color: #fff;
+            padding: 8mm 12mm 6mm 12mm;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -10%;
+            width: 120%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 5mm;
+            z-index: 1;
+        }
+
+        .header-left img {
+            height: 14mm;
+            filter: invert(1);
+        }
+
+        .header-title h1 {
+            font-size: 18pt;
+            font-weight: 900;
+            letter-spacing: 0.05em;
+            line-height: 1.2;
+        }
+
+        .header-title .sub {
+            font-size: 8pt;
+            color: #93c5fd;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            margin-top: 1mm;
+        }
+
+        .header-badge {
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 2mm 5mm;
+            text-align: right;
+        }
+
+        .header-badge .label {
+            font-size: 6pt;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #93c5fd;
+            display: block;
+        }
+
+        .header-badge .value {
+            font-size: 9pt;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 6mm 10mm 4mm 10mm;
+            display: flex;
+            flex-direction: column;
+            gap: 4mm;
+        }
+
+        .tagline-box {
+            background: #f8fafc;
+            border-left: 5px solid #2563eb;
+            padding: 4mm 6mm;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.02);
+            display: flex;
+            gap: 4mm;
+            align-items: center;
+        }
+
+        .tagline-text {
+            flex: 1;
+        }
+
+        .tagline-box h2 {
+            font-size: 12pt;
+            color: #1e3a8a;
+            font-weight: 800;
+            margin-bottom: 2mm;
+        }
+
+        .tagline-box p {
+            font-size: 8.5pt;
+            color: #475569;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .tagline-image {
+            width: 50mm;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 2mm;
+            display: flex;
+            align-items: center;
+            gap: 2mm;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 1mm;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 4mm;
+            height: 1mm;
+            background: #2563eb;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4mm;
+        }
+
+        .feature-card {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 3mm 4mm;
+            position: relative;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-card h4 {
+            font-size: 9pt;
+            font-weight: 800;
+            color: #1e3a8a;
+            margin-bottom: 1.5mm;
+        }
+
+        .feature-card p {
+            font-size: 7.5pt;
+            color: #475569;
+            line-height: 1.5;
+        }
+
+        .image-card {
+            display: flex;
+            flex-direction: column;
+            gap: 2mm;
+        }
+
+        .image-card img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+        }
+
+        .image-card h4 {
+            font-size: 9pt;
+            font-weight: 800;
+            color: #1e293b;
+            text-align: center;
+        }
+
+        .tools-section {
+            background: #0f172a;
+            border-radius: 8px;
+            padding: 3mm 5mm;
+            color: #fff;
+            margin-top: auto;
+        }
+
+        .tools-section h3 {
+            font-size: 8pt;
+            font-weight: 700;
+            color: #93c5fd;
+            margin-bottom: 2mm;
+            text-align: center;
+            letter-spacing: 0.1em;
+        }
+
+        .tool-icons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 3mm;
+        }
+
+        .tool-tag {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 1mm 3mm;
+            border-radius: 4px;
+            font-size: 7pt;
+            font-weight: 500;
+        }
+
+        .bottom-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4mm;
+        }
+
+        .info-col {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-radius: 8px;
+            padding: 3mm 4mm;
+            border: 1px solid #bae6fd;
+        }
+
+        .info-col h3 {
+            font-size: 9pt;
+            font-weight: 800;
+            color: #0369a1;
+            margin-bottom: 1.5mm;
+        }
+
+        .info-col p {
+            font-size: 7.5pt;
+            color: #0c4a6e;
+            line-height: 1.5;
+            margin-bottom: 1.5mm;
+        }
+
+        .info-list {
+            list-style: none;
+            margin-bottom: 2mm;
+        }
+
+        .info-list li {
+            font-size: 7.5pt;
+            color: #0c4a6e;
+            padding-left: 4mm;
+            position: relative;
+            margin-bottom: 1mm;
+            line-height: 1.4;
+        }
+
+        .info-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #0ea5e9;
+            font-weight: bold;
+        }
+
+        .footer {
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            padding: 5mm 12mm;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer-left {
+            display: flex;
+            align-items: center;
+            gap: 4mm;
+        }
+
+        .footer-left img {
+            height: 8mm;
+            opacity: 0.8;
+        }
+
+        .footer-info {
+            font-size: 7pt;
+            color: #64748b;
+        }
+
+        .footer-info strong {
+            color: #1e293b;
+            display: block;
+            margin-bottom: 0.5mm;
+        }
+
+        .footer-right {
+            text-align: right;
+        }
+
+        .footer-right p {
+            font-size: 6pt;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <div class="header">
+            <div class="header-left">
+                <img src="logo/moai-logo.png" alt="MOAI Logo">
+                <div class="header-title">
+                    <h1>AMPL & AGI4OPT</h1>
+                    <div class="sub">数理最適化モデリング言語とAIによる自動コーディング</div>
+                </div>
+            </div>
+            <div class="header-badge">
+                <span class="label">Platform</span>
+                <span class="value">AI Optimization</span>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="tagline-box">
+                <div class="tagline-text">
+                    <h2>自然言語から高水準な数理最適化モデルを瞬時に生成</h2>
+                    <p>
+                        数理最適化モデリング言語<strong>「AMPL」</strong>は、直感的な記述と高い表現力により世界40以上の主要産業で利用されています。<br>
+                        さらに、AIサービス<strong>「AGI4OPT」</strong>により、数理最適化の専門知識がなくても、自然言語の要件入力だけでAMPLコードとUIの自動生成が可能になりました。
+                    </p>
+                </div>
+                <img src="figures/agi4opt-main.png" alt="AGI4OPT Main Concept" class="tagline-image">
+            </div>
+
+            <div class="section-title">AMPLの主な特徴</div>
+            <div class="grid-2">
+                <div class="feature-card">
+                    <h4>代数的な記述と直感的なモデリング</h4>
+                    <p>数学の教科書に近い記法により、理解しやすく効率的なモデリングが可能です。モデルとデータが分離されているため、再利用性が高く大規模データにも容易に対応できます。</p>
+                </div>
+                <div class="feature-card">
+                    <h4>ソルバー連携の柔軟性と高い表現力</h4>
+                    <p>商用ソルバーに加え、CBC、SCIPHiGHSなどのオープンソースソルバーまでソルバー名を変えるだけで切り替え可能。線形、整数、非線形など幅広い問題に対応します。</p>
+                </div>
+            </div>
+
+            <div class="section-title">AIを用いたAMPL自動コーディング：AGI4OPT</div>
+            <div class="grid-2" style="margin-bottom: 2mm;">
+                <div class="image-card">
+                    <h4>活用イメージ</h4>
+                    <img src="figures/agi4opt-case.png" alt="AGI4OPT Use Case">
+                    <p style="font-size: 7.5pt; color: #475569; padding: 1mm 2mm; text-align: center;">数理最適化の要件を自然言語で整理
+                        _ </p>
+                </div>
+                <div class="image-card">
+                    <h4>アプリケーションUI</h4>
+                    <img src="figures/agi4opt-app.png" alt="AGI4OPT Application UI">
+                    <p style="font-size: 7.5pt; color: #475569; padding: 1mm 2mm; text-align: center;">
+                        Agentic AIがAMPLコードを自動で生成・実行</p>
+                </div>
+            </div>
+
+            <div class="bottom-row">
+                <div class="info-col">
+                    <h3>AGI4OPTの導入メリット</h3>
+                    <ul class="info-list">
+                        <li><strong>開発時間の大幅短縮:</strong> 問題文を入力するだけでコード生成</li>
+                        <li><strong>専門知識が不要:</strong> 高度な数理最適化の知識なしで利用可能</li>
+                        <li><strong>迅速な意思決定:</strong> 自然言語からプロトタイプを素早く構築</li>
+                        <li><strong>無料で利用可能:</strong> アカデミック、商用問わず無料</li>
+                    </ul>
+                </div>
+                <div class="info-col">
+                    <h3>サービス内容（当社提供）</h3>
+                    <ul class="info-list">
+                        <li>AMPLライセンスの販売（商用・教育機関向け等）</li>
+                        <li>導入・運用支援コンサルティング</li>
+                        <li>モデル構築・カスタマイズ支援</li>
+                        <li>技術サポート、日本語ドキュメントの提供</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tools-section">
+                <h3>SUPPORTED TECHNOLOGIES & SOLVERS</h3>
+                <div class="tool-icons">
+                    <div class="tool-tag">AMPL</div>
+                    <div class="tool-tag">Google Gemini</div>
+                    <div class="tool-tag">AGI4OPT</div>
+                    <div class="tool-tag">Gurobi</div>
+                    <div class="tool-tag">CPLEX</div>
+                    <div class="tool-tag">Xpress</div>
+                    <div class="tool-tag">HiGHS</div>
+                    <div class="tool-tag">CBC</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-left">
+                <img src="logo/moai-logo.png" alt="MOAI Logo">
+                <div class="footer-info">
+                    <strong>MOAI Lab Inc.</strong>
+                    〒135-0022 東京都江東区三好1-8-3
+                </div>
+            </div>
+            <div class="footer-right">
+                <p>© 2026 MOAI Lab Inc. All rights reserved.</p>
+                <p>https://moai-lab.jp</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
