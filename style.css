@@ -1198,7 +1198,8 @@ body {
    LANDING PAGE — PRODUCT GRID
    ======================================== */
 .hero-landing {
-  min-height: 70vh;
+  min-height: 80vh;
+  padding: 140px 0 180px;
 }
 
 .hero-landing .hero-content {
@@ -1342,7 +1343,8 @@ body {
    PRODUCT PAGE — COMPACT HERO
    ======================================== */
 .hero-product {
-  min-height: 60vh;
+  min-height: 70vh;
+  padding: 140px 0 180px;
 }
 
 .hero-product .hero-content {
