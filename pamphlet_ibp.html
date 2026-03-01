@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic IBP パンフレット</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap');
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        html,
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: #f0f0f0;
+            color: #1a1a2e;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: #ffffff;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media print {
+            body {
+                background: #ffffff;
+            }
+
+            .page {
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+
+        @media screen {
+            .page {
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+                margin: 20px auto;
+            }
+        }
+
+        /* === Header === */
+        .header {
+            background: linear-gradient(135deg, #0f0c29 0%, #1a1a3e 40%, #24243e 100%);
+            color: #ffffff;
+            padding: 8mm 10mm 5mm 10mm;
+            display: flex;
+            align-items: center;
+            gap: 6mm;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #f43f5e, #ec4899, #f43f5e);
+        }
+
+        .header-logo img {
+            height: 13mm;
+            filter: invert(1);
+        }
+
+        .header-text h1 {
+            font-size: 20pt;
+            font-weight: 900;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        .header-text .subtitle {
+            font-size: 9pt;
+            font-weight: 300;
+            color: #fbcfe8;
+            margin-top: 1mm;
+            letter-spacing: 0.5px;
+        }
+
+        /* === Main Content === */
+        .main-content {
+            flex: 1;
+            padding: 5mm 10mm 4mm 10mm;
+            display: flex;
+            flex-direction: column;
+            gap: 4mm;
+        }
+
+        /* === Tagline === */
+        .tagline {
+            text-align: center;
+            padding: 1.5mm 0;
+        }
+
+        .tagline p {
+            font-size: 9pt;
+            font-weight: 500;
+            color: #24243e;
+            line-height: 1.6;
+        }
+
+        .tagline .highlight {
+            color: #ec4899;
+            font-weight: 700;
+        }
+
+        /* === Features Section === */
+        .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 4mm;
+        }
+
+        .feature-card {
+            background: linear-gradient(145deg, #fff5f8 0%, #fdf2f8 100%);
+            border-radius: 3mm;
+            padding: 3mm;
+            border-left: 3px solid #ec4899;
+            position: relative;
+        }
+
+        .feature-card .feature-icon {
+            font-size: 14pt;
+            margin-bottom: 1mm;
+        }
+
+        .feature-card h3 {
+            font-size: 7.5pt;
+            font-weight: 700;
+            color: #1a1a3e;
+            margin-bottom: 1mm;
+        }
+
+        .feature-card p {
+            font-size: 6pt;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* === Skills Section === */
+        .skills-section h2 {
+            font-size: 9pt;
+            font-weight: 700;
+            color: #1a1a3e;
+            margin-bottom: 2mm;
+            padding-left: 3mm;
+            border-left: 3px solid #ec4899;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3mm;
+        }
+
+        .skill-item {
+            background: #ffffff;
+            border: 1px solid #fce7f3;
+            border-radius: 2mm;
+            padding: 2.5mm 3mm;
+            display: flex;
+            align-items: flex-start;
+            gap: 2.5mm;
+        }
+
+        .skill-item .skill-icon {
+            font-size: 10pt;
+            background: #fff5f8;
+            width: 6mm;
+            height: 6mm;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: #ec4899;
+            flex-shrink: 0;
+        }
+
+        .skill-item .skill-content h4 {
+            font-size: 6pt;
+            font-weight: 700;
+            color: #1a1a3e;
+            margin-bottom: 0.5mm;
+        }
+
+        .skill-item .skill-content p {
+            font-size: 5pt;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        /* === Output / Constraints Row === */
+        .info-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3mm;
+        }
+
+        .info-box {
+            background: #fff5f8;
+            border-radius: 3mm;
+            padding: 3mm;
+            border: 1px solid #fce7f3;
+        }
+
+        .info-box h3 {
+            font-size: 7.5pt;
+            font-weight: 700;
+            color: #1a1a3e;
+            margin-bottom: 1.5mm;
+            display: flex;
+            align-items: center;
+            gap: 1.5mm;
+        }
+
+        .info-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-box ul li {
+            font-size: 6pt;
+            color: #444;
+            padding: 0.5mm 0;
+            padding-left: 3mm;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .info-box ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #ec4899;
+            font-size: 6pt;
+        }
+
+        /* === Cycle Section === */
+        .cycle-section {
+            margin-top: auto;
+            background: linear-gradient(135deg, #1a1a3e 0%, #24243e 100%);
+            border-radius: 3mm;
+            padding: 3mm 4mm;
+            color: #ffffff;
+        }
+
+        .cycle-section h3 {
+            font-size: 8pt;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 2mm;
+            text-align: center;
+        }
+
+        .cycle-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 3mm;
+        }
+
+        .cycle-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 2mm;
+            padding: 2.5mm;
+        }
+
+        .cycle-card h4 {
+            font-size: 6.5pt;
+            color: #fbcfe8;
+            margin-bottom: 1.5mm;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            padding-bottom: 1mm;
+            text-align: center;
+        }
+
+        .cycle-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .cycle-card ul li {
+            font-size: 5.5pt;
+            color: #e0e0e0;
+            padding-left: 2.5mm;
+            position: relative;
+            line-height: 1.5;
+            margin-bottom: 0.8mm;
+        }
+
+        .cycle-card ul li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #ec4899;
+            font-size: 4.5pt;
+            top: 0.5mm;
+        }
+
+        /* === Footer === */
+        .footer {
+            background: linear-gradient(135deg, #0f0c29 0%, #1a1a3e 40%, #24243e 100%);
+            color: #ffffff;
+            padding: 4mm 10mm;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #f43f5e, #ec4899, #f43f5e);
+        }
+
+        .footer-left {
+            display: flex;
+            align-items: center;
+            gap: 3mm;
+        }
+
+        .footer-left img {
+            height: 8mm;
+            filter: invert(1);
+        }
+
+        .footer-company {
+            font-size: 8pt;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-address {
+            font-size: 6pt;
+            color: #fbcfe8;
+            margin-top: 0.5mm;
+        }
+
+        .footer-right {
+            text-align: right;
+            font-size: 5.5pt;
+            color: #888;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+
+        <!-- Header -->
+        <div class="header">
+            <div class="header-logo">
+                <img src="logo/moai-logo.png" alt="MOAI Logo">
+            </div>
+            <div class="header-text">
+                <h1>Agentic IBP</h1>
+                <div class="subtitle">次世代ビジネスプランニングシステム — S&OP Orchestration by AI</div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+
+            <!-- Tagline -->
+            <div class="tagline">
+                <p>
+                    需要予測、在庫最適化、生産計画、物流設計まで、従来サイロ化していたS&OPプロセスを<br>
+                    <span class="highlight">AIエージェントが自律的に連携</span>。自然言語で指示するだけで、<span
+                        class="highlight">全体の最適解を瞬時に提示</span>します。
+                </p>
+            </div>
+
+            <!-- Features -->
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>需要予測・在庫最適化</h3>
+                    <p>深層・機械学習などを活用して需要を予測。ABC分析と連動し、EOQや安全在庫を自動計算。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>生産・物流ネットワーク</h3>
+                    <p>BOM制約や段取り費を考慮したロットサイズ最適化から、施設配置・配車ルート最適化まで一気通貫。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>リスク管理・What-if分析</h3>
+                    <p>途絶リスクを生存時間分析とリスク最適化で評価。対話的なシナリオ比較で、コストとKPIのトレードオフを検討。</p>
+                </div>
+            </div>
+
+            <!-- Skills -->
+            <div class="skills-section">
+                <h2>利用可能スキル群（Agent Skills）</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <div class="skill-icon">📈</div>
+                        <div class="skill-content">
+                            <h4>需要計画 (Forecast)</h4>
+                            <p>深層・機械学習などによる予測、顧客×製品セグメント別の詳細な予測を実行。</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">📊</div>
+                        <div class="skill-content">
+                            <h4>重要度・在庫方針分析 (ABC/Inventory)</h4>
+                            <p>ABC/XYZ分析によるSKU分類と、各分類に応じた最適な安全在庫・EOQの自動計算。</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">⚙️</div>
+                        <div class="skill-content">
+                            <h4>生産・供給計画 (Lotsizing)</h4>
+                            <p>BOM制約、段取り費、マルチモードを考慮した最適な生産スケジュール・ロットサイズを決定。</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">🚚</div>
+                        <div class="skill-content">
+                            <h4>物流・配車計画 (VRP/LND)</h4>
+                            <p>施設配置や3層ネットワーク設計から、時間枠を考慮したラストマイルの配車計画まで統合。</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">🛡️</div>
+                        <div class="skill-content">
+                            <h4>リスク管理 (SCRM)</h4>
+                            <p>生存時間分析やリスク最適化を用いた、途絶リスクへの対応とシナリオ比較(What-If分析)。</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">🔄</div>
+                        <div class="skill-content">
+                            <h4>S&OP一気通貫 (S&OP)</h4>
+                            <p>最小限のデータで「需要・在庫・生産」計画を最速サイクルで実行します。</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">💻</div>
+                        <div class="skill-content">
+                            <h4>高度なアプリケーション生成</h4>
+                            <p>分析・最適化結果を瞬時にインタラクティブなWebアプリ化します。</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">🗣️</div>
+                        <div class="skill-content">
+                            <h4>自然言語インターフェース</h4>
+                            <p>データ読込・前処理から分析、最適化まで、対話形式で自律的にオーケストレーション。</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">🗂️</div>
+                        <div class="skill-content">
+                            <h4>CSV読込・マージ (Data Loading)</h4>
+                            <p>エンコーディング・区切り文字等の自動検出、複数CSVファイルの自動統合を実行。</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">🧹</div>
+                        <div class="skill-content">
+                            <h4>データ前処理 (Preprocessing)</h4>
+                            <p>データクリーニング、欠損値補完などの前処理を自動で行い分析に最適な形へ整形。</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">📊</div>
+                        <div class="skill-content">
+                            <h4>データ可視化 (Visualization)</h4>
+                            <p>読み込んだデータ・分析結果を用いたEDAレポートや可視化グラフを生成。</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">📍</div>
+                        <div class="skill-content">
+                            <h4>ジオコーディング (Geocoding)</h4>
+                            <p>住所・拠点データから緯度・経度を取得、またOSRM距離行列を用いた距離計算。</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">⏳</div>
+                        <div class="skill-content">
+                            <h4>スケジューリング (Scheduling)</h4>
+                            <p>生産工程やジョブショップのタスク順序を最適化し、納期順守や総工期短縮を実現。</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">👥</div>
+                        <div class="skill-content">
+                            <h4>シフト最適化 (Shift & Roster)</h4>
+                            <p>制約最適化（CP-SAT）による複雑な勤務条件やスキルを考慮した人員配置・シフト表生成。</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">💰</div>
+                        <div class="skill-content">
+                            <h4>収益管理 (Revenue Management)</h4>
+                            <p>容量配分、予約制限、入札価格制御を最適化し、限りあるリソースからの収益を最大化。</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">🧠</div>
+                        <div class="skill-content">
+                            <h4>高精度予測・ML (AutoGluon)</h4>
+                            <p>時系列予測から表形式データの分類・回帰まで、最先端の機械学習モデルを統合実行。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Output & Constraints -->
+            <div class="info-row">
+                <div class="info-box">
+                    <h3>💡 Agenticな特徴</h3>
+                    <ul>
+                        <li><b>自然言語インターフェース:</b> 「S&OPを実行して」の一言で全プロセスが連携</li>
+                        <li><b>自己診断・前処理:</b> CSVデータのクレンジングと統合を自動化</li>
+                        <li><b>複数スキルの連携:</b> scmopt_forecast → inventory → lotsizing 等の自律実行</li>
+                        <li><b>アプリ自動生成:</b> 結果を即座にWebアプリとして出力可能</li>
+                        <li><b>数理モデル生成:</b> カスタムモデルの自動構築</li>
+                    </ul>
+                </div>
+                <div class="info-box">
+                    <h3>📋 包含される主なサプライチェーン制約</h3>
+                    <ul>
+                        <li><b>在庫:</b> (Q,R)方策, (s,S)方策, 多段階最適化, サービスレベル制約</li>
+                        <li><b>生産:</b> BOM（部品表）制約, マルチモード生産, 段取り費用の考慮</li>
+                        <li><b>物流:</b> 3層ネットワーク設計, 時間枠付きVRP(CVRP/VRPTW)</li>
+                        <li><b>人員体制:</b> 制約最適化を用いたシフト・スケジューリング</li>
+                        <li><b>リスク:</b> 拠点途絶確率と回復時間に応じたリスク最適化</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- IBP Operation Cycle -->
+            <div class="cycle-section">
+                <h3>🔄 IBP 運用サイクルモデル</h3>
+                <div class="cycle-grid">
+                    <div class="cycle-card">
+                        <h4>月次サイクル (Short-term)</h4>
+                        <ul>
+                            <li><b>需要予測の更新:</b> 新実績データの追加・予測モデル再学習</li>
+                            <li><b>ABC分類のローリング:</b> SKU重要度の見直し</li>
+                            <li><b>在庫方針・生産計画の調整:</b> 短期の変動へ対応</li>
+                        </ul>
+                    </div>
+                    <div class="cycle-card">
+                        <h4>四半期サイクル (Mid-term)</h4>
+                        <ul>
+                            <li><b>ネットワーク設計の見直し:</b> 配送ルート・拠点最適化</li>
+                            <li><b>リスク分析の更新:</b> サプライチェーンの脆弱性評価</li>
+                            <li><b>シナリオ比較:</b> 次期に向けたS&OP全体審議</li>
+                        </ul>
+                    </div>
+                    <div class="cycle-card">
+                        <h4>年次サイクル (Long-term)</h4>
+                        <ul>
+                            <li><b>新製品・終売品の整理:</b> プロダクトライフサイクル管理</li>
+                            <li><b>中長期ネットワーク再設計:</b> 設備投資・拠点統廃合</li>
+                            <li><b>収益管理戦略の更新:</b> 大規模なビジネスモデルの転換</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-left">
+                <img src="logo/moai-logo.png" alt="MOAI Logo">
+                <div>
+                    <div class="footer-company">MOAI Lab Inc.</div>
+                    <div class="footer-address">〒135-0022 東京都江東区三好1-8-3</div>
+                </div>
+            </div>
+            <div class="footer-right">
+                &copy; 2026 MOAI Lab Inc. All Rights Reserved.<br><span>https://www.moai-lab.jp</span>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
