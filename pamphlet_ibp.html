@@ -4,141 +4,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agentic IBP パンフレット</title>
+    <title>Agentic IBP（Integrated Business Planning）パンフレット</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap');
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
 
-        *,
-        *::before,
-        *::after {
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        @page {
-            size: A4;
-            margin: 0;
-        }
-
-        html,
         body {
             font-family: 'Noto Sans JP', sans-serif;
-            background: #f0f0f0;
-            color: #1a1a2e;
+            background: #fff;
         }
 
         .page {
             width: 210mm;
             height: 297mm;
             margin: 0 auto;
-            background: #ffffff;
             overflow: hidden;
-            position: relative;
             display: flex;
             flex-direction: column;
-        }
-
-        @media print {
-            body {
-                background: #ffffff;
-            }
-
-            .page {
-                margin: 0;
-                box-shadow: none;
-            }
-        }
-
-        @media screen {
-            .page {
-                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
-                margin: 20px auto;
-            }
+            background: #fff;
         }
 
         /* === Header === */
         .header {
-            background: linear-gradient(135deg, #0f0c29 0%, #1a1a3e 40%, #24243e 100%);
-            color: #ffffff;
-            padding: 8mm 10mm 5mm 10mm;
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%);
+            color: #fff;
+            padding: 6mm 10mm 5mm 10mm;
             display: flex;
             align-items: center;
-            gap: 6mm;
+            gap: 4mm;
             position: relative;
-            overflow: hidden;
-        }
-
-        .header::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #f43f5e, #ec4899, #f43f5e);
         }
 
         .header-logo img {
-            height: 13mm;
+            height: 11mm;
             filter: invert(1);
         }
 
         .header-text h1 {
-            font-size: 20pt;
+            font-size: 16pt;
             font-weight: 900;
-            letter-spacing: 1px;
+            letter-spacing: 0.05em;
             line-height: 1.2;
         }
 
         .header-text .subtitle {
-            font-size: 9pt;
-            font-weight: 300;
-            color: #fbcfe8;
+            font-size: 7pt;
+            color: #93c5fd;
+            font-weight: 400;
+            letter-spacing: 0.08em;
             margin-top: 1mm;
-            letter-spacing: 0.5px;
         }
 
         /* === Main Content === */
         .main-content {
             flex: 1;
-            padding: 5mm 10mm 4mm 10mm;
+            padding: 3mm 8mm 2mm 8mm;
             display: flex;
             flex-direction: column;
-            gap: 4mm;
+            gap: 2.5mm;
         }
 
         /* === Tagline === */
         .tagline {
-            text-align: center;
-            padding: 1.5mm 0;
+            background: linear-gradient(90deg, #eff6ff, #f0fdf4);
+            border-left: 3px solid #3b82f6;
+            border-radius: 0 6px 6px 0;
+            padding: 2.5mm 4mm;
         }
 
         .tagline p {
-            font-size: 9pt;
+            font-size: 8pt;
+            color: #1e3a5f;
+            line-height: 1.5;
             font-weight: 500;
-            color: #24243e;
-            line-height: 1.6;
         }
 
         .tagline .highlight {
-            color: #ec4899;
+            color: #3b82f6;
             font-weight: 700;
         }
 
         /* === Features Section === */
         .features {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 4mm;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2mm;
         }
 
         .feature-card {
-            background: linear-gradient(145deg, #fff5f8 0%, #fdf2f8 100%);
-            border-radius: 3mm;
-            padding: 3mm;
-            border-left: 3px solid #ec4899;
-            position: relative;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+            padding: 2.5mm 2.5mm;
+            text-align: center;
         }
 
         .feature-card .feature-icon {
@@ -149,37 +124,40 @@
         .feature-card h3 {
             font-size: 7.5pt;
             font-weight: 700;
-            color: #1a1a3e;
-            margin-bottom: 1mm;
+            color: #1e3a5f;
+            margin-bottom: 0.5mm;
         }
 
         .feature-card p {
             font-size: 6pt;
-            color: #555;
-            line-height: 1.5;
+            color: #64748b;
+            line-height: 1.4;
         }
 
         /* === Skills Section === */
         .skills-section h2 {
-            font-size: 9pt;
+            font-size: 8pt;
             font-weight: 700;
-            color: #1a1a3e;
-            margin-bottom: 2mm;
-            padding-left: 3mm;
-            border-left: 3px solid #ec4899;
+            color: #1e3a5f;
+            border-bottom: 2px solid #3b82f6;
+            padding-bottom: 1mm;
+            margin-bottom: 1.5mm;
+            display: flex;
+            align-items: center;
+            gap: 2mm;
         }
 
         .skills-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3mm;
+            gap: 2mm;
         }
 
         .skill-item {
-            background: #ffffff;
-            border: 1px solid #fce7f3;
-            border-radius: 2mm;
-            padding: 2.5mm 3mm;
+            background: #f8f9ff;
+            border: 1px solid #e8ecf4;
+            border-radius: 3mm;
+            padding: 2mm 2.5mm;
             display: flex;
             align-items: flex-start;
             gap: 2.5mm;
@@ -187,27 +165,26 @@
 
         .skill-item .skill-icon {
             font-size: 10pt;
-            background: #fff5f8;
-            width: 6mm;
-            height: 6mm;
+            width: 5mm;
+            height: 5mm;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 50%;
-            color: #ec4899;
             flex-shrink: 0;
+            background: transparent;
+            color: inherit;
         }
 
         .skill-item .skill-content h4 {
-            font-size: 6pt;
+            font-size: 6.5pt;
             font-weight: 700;
-            color: #1a1a3e;
+            color: #1e3a5f;
             margin-bottom: 0.5mm;
         }
 
         .skill-item .skill-content p {
-            font-size: 5pt;
-            color: #555;
+            font-size: 5.5pt;
+            color: #64748b;
             line-height: 1.4;
         }
 
@@ -219,16 +196,16 @@
         }
 
         .info-box {
-            background: #fff5f8;
+            background: #f8f9ff;
             border-radius: 3mm;
             padding: 3mm;
-            border: 1px solid #fce7f3;
+            border: 1px solid #e8ecf4;
         }
 
         .info-box h3 {
             font-size: 7.5pt;
             font-weight: 700;
-            color: #1a1a3e;
+            color: #1e3a5f;
             margin-bottom: 1.5mm;
             display: flex;
             align-items: center;
@@ -238,60 +215,64 @@
         .info-box ul {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
 
         .info-box ul li {
-            font-size: 6pt;
-            color: #444;
-            padding: 0.5mm 0;
-            padding-left: 3mm;
-            position: relative;
+            font-size: 6.5pt;
+            color: #475569;
             line-height: 1.5;
+            padding: 0.5mm 0;
+            padding-left: 3.5mm;
+            position: relative;
         }
 
         .info-box ul li::before {
-            content: '▸';
+            content: '✓';
             position: absolute;
             left: 0;
-            color: #ec4899;
-            font-size: 6pt;
+            top: 0.5mm;
+            color: #3b82f6;
+            font-weight: 700;
+            font-size: 6.5pt;
         }
 
         /* === Cycle Section === */
         .cycle-section {
             margin-top: auto;
-            background: linear-gradient(135deg, #1a1a3e 0%, #24243e 100%);
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
             border-radius: 3mm;
-            padding: 3mm 4mm;
-            color: #ffffff;
+            padding: 3mm;
         }
 
         .cycle-section h3 {
-            font-size: 8pt;
+            font-size: 7.5pt;
             font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 2mm;
+            color: #1e3a5f;
+            margin-bottom: 1.5mm;
             text-align: center;
         }
 
         .cycle-grid {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            gap: 3mm;
+            gap: 2mm;
         }
 
         .cycle-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: #fff;
+            border: 1px solid #e2e8f0;
             border-radius: 2mm;
-            padding: 2.5mm;
+            padding: 2mm;
         }
 
         .cycle-card h4 {
             font-size: 6.5pt;
-            color: #fbcfe8;
-            margin-bottom: 1.5mm;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            font-weight: 700;
+            color: #3b82f6;
+            margin-bottom: 1mm;
+            border-bottom: 1px solid #e2e8f0;
             padding-bottom: 1mm;
             text-align: center;
         }
@@ -303,42 +284,31 @@
         }
 
         .cycle-card ul li {
-            font-size: 5.5pt;
-            color: #e0e0e0;
+            font-size: 6pt;
+            color: #64748b;
             padding-left: 2.5mm;
             position: relative;
-            line-height: 1.5;
-            margin-bottom: 0.8mm;
+            line-height: 1.4;
+            margin-bottom: 0.5mm;
         }
 
         .cycle-card ul li::before {
             content: '▶';
             position: absolute;
             left: 0;
-            color: #ec4899;
+            color: #3b82f6;
             font-size: 4.5pt;
             top: 0.5mm;
         }
 
         /* === Footer === */
         .footer {
-            background: linear-gradient(135deg, #0f0c29 0%, #1a1a3e 40%, #24243e 100%);
-            color: #ffffff;
-            padding: 4mm 10mm;
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%);
+            color: #fff;
+            padding: 3mm 10mm;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            position: relative;
-        }
-
-        .footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, #f43f5e, #ec4899, #f43f5e);
+            justify-content: space-between;
         }
 
         .footer-left {
@@ -348,26 +318,24 @@
         }
 
         .footer-left img {
-            height: 8mm;
+            height: 7mm;
             filter: invert(1);
         }
 
         .footer-company {
-            font-size: 8pt;
+            font-size: 7pt;
             font-weight: 700;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.05em;
         }
 
         .footer-address {
             font-size: 6pt;
-            color: #fbcfe8;
-            margin-top: 0.5mm;
+            color: #94a3b8;
         }
 
         .footer-right {
-            text-align: right;
             font-size: 5.5pt;
-            color: #888;
+            color: #64748b;
         }
     </style>
 </head>
@@ -516,7 +484,7 @@
                         <div class="skill-icon">👥</div>
                         <div class="skill-content">
                             <h4>シフト最適化 (Shift & Roster)</h4>
-                            <p>制約最適化（CP-SAT）による複雑な勤務条件やスキルを考慮した人員配置・シフト表生成。</p>
+                            <p>制約最適化による複雑な勤務条件やスキルを考慮した人員配置・シフト表生成。</p>
                         </div>
                     </div>
                     <div class="skill-item">
@@ -543,7 +511,7 @@
                     <ul>
                         <li><b>自然言語インターフェース:</b> 「S&OPを実行して」の一言で全プロセスが連携</li>
                         <li><b>自己診断・前処理:</b> CSVデータのクレンジングと統合を自動化</li>
-                        <li><b>複数スキルの連携:</b> scmopt_forecast → inventory → lotsizing 等の自律実行</li>
+                        <li><b>複数スキルの連携:</b> forecast → inventory → lotsizing 等の自律実行</li>
                         <li><b>アプリ自動生成:</b> 結果を即座にWebアプリとして出力可能</li>
                         <li><b>数理モデル生成:</b> カスタムモデルの自動構築</li>
                     </ul>
