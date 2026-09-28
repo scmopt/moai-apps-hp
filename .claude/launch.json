@@ -1,0 +1,317 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "inventory-webapp",
+      "runtimeExecutable": "/Users/mikiokubo/.nvm/versions/node/v20.19.6/bin/npm",
+      "runtimeArgs": [
+        "--prefix",
+        "/Users/mikiokubo/Documents/dev/anyLogistix/inventory-webapp/frontend",
+        "run",
+        "dev"
+      ],
+      "url": "http://localhost:5173",
+      "port": 5173
+    },
+    {
+      "name": "inventory-backend",
+      "runtimeExecutable": "/opt/miniconda3/bin/python",
+      "runtimeArgs": [
+        "-m",
+        "uvicorn",
+        "main:app",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8000",
+        "--app-dir",
+        "/Users/mikiokubo/Documents/dev/anyLogistix/inventory-webapp/backend",
+        "--reload",
+        "--reload-dir",
+        "/Users/mikiokubo/Documents/dev/anyLogistix/inventory-webapp/backend"
+      ],
+      "port": 8000
+    },
+    {
+      "name": "scheduler-web",
+      "runtimeExecutable": "/Users/mikiokubo/.nvm/versions/node/v20.19.6/bin/npm",
+      "runtimeArgs": [
+        "--prefix",
+        "/Users/mikiokubo/Documents/dev/anyLogistix/MOAI-Apps/Scheduler",
+        "run",
+        "dev"
+      ],
+      "port": 5180
+    },
+    {
+      "name": "artifacts-static",
+      "runtimeExecutable": "/Users/mikiokubo/Documents/dev/anyLogistix/.venv/bin/python",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8765",
+        "--directory",
+        "/Users/mikiokubo/Documents/dev/anyLogistix"
+      ],
+      "port": 8765
+    },
+    {
+      "name": "explorer",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "apps/explorer",
+        "run",
+        "dev",
+        "--",
+        "--port",
+        "5175",
+        "--strictPort"
+      ],
+      "port": 5175
+    },
+    {
+      "name": "scheduler-api",
+      "runtimeExecutable": ".venv/bin/python",
+      "runtimeArgs": [
+        "-m",
+        "uvicorn",
+        "app:app",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8190",
+        "--app-dir",
+        "apps/scheduler/server"
+      ],
+      "port": 8190
+    },
+    {
+      "name": "scheduler",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "apps/scheduler/web",
+        "run",
+        "dev"
+      ],
+      "port": 5190
+    },
+    {
+      "name": "router-api",
+      "runtimeExecutable": ".venv/bin/python",
+      "runtimeArgs": [
+        "-m",
+        "uvicorn",
+        "app:app",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8191",
+        "--app-dir",
+        "apps/router/server"
+      ],
+      "port": 8191
+    },
+    {
+      "name": "router",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "apps/router/web",
+        "run",
+        "dev"
+      ],
+      "port": 5191
+    },
+    {
+      "name": "network-api",
+      "runtimeExecutable": ".venv/bin/python",
+      "runtimeArgs": [
+        "-m",
+        "uvicorn",
+        "app:app",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8192",
+        "--app-dir",
+        "apps/network/server"
+      ],
+      "port": 8192
+    },
+    {
+      "name": "network",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "apps/network/web",
+        "run",
+        "dev"
+      ],
+      "port": 5192
+    },
+    {
+      "name": "lotsize-api",
+      "runtimeExecutable": ".venv/bin/python",
+      "runtimeArgs": [
+        "-m",
+        "uvicorn",
+        "app:app",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8193",
+        "--app-dir",
+        "apps/lotsize/server"
+      ],
+      "port": 8193
+    },
+    {
+      "name": "lotsize",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "apps/lotsize/web",
+        "run",
+        "dev"
+      ],
+      "port": 5193
+    },
+    {
+      "name": "inventory-api",
+      "runtimeExecutable": ".venv/bin/python",
+      "runtimeArgs": [
+        "-m",
+        "uvicorn",
+        "app:app",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8194",
+        "--app-dir",
+        "apps/inventory/server"
+      ],
+      "port": 8194
+    },
+    {
+      "name": "inventory",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "apps/inventory/web",
+        "run",
+        "dev"
+      ],
+      "port": 5194
+    },
+    {
+      "name": "revenue-api",
+      "runtimeExecutable": ".venv/bin/python",
+      "runtimeArgs": [
+        "-m",
+        "uvicorn",
+        "app:app",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8195",
+        "--app-dir",
+        "apps/revenue/server"
+      ],
+      "port": 8195
+    },
+    {
+      "name": "revenue",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "apps/revenue/web",
+        "run",
+        "dev"
+      ],
+      "port": 5195
+    },
+    {
+      "name": "shift-api",
+      "runtimeExecutable": ".venv/bin/python",
+      "runtimeArgs": [
+        "-m",
+        "uvicorn",
+        "app:app",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8196",
+        "--app-dir",
+        "apps/shift/server"
+      ],
+      "port": 8196
+    },
+    {
+      "name": "shift",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "apps/shift/web",
+        "run",
+        "dev"
+      ],
+      "port": 5196
+    },
+    {
+      "name": "scml-api",
+      "runtimeExecutable": ".venv/bin/python",
+      "runtimeArgs": [
+        "-m",
+        "uvicorn",
+        "app:app",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8197",
+        "--app-dir",
+        "apps/scml/server"
+      ],
+      "port": 8197
+    },
+    {
+      "name": "scml",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "apps/scml/web",
+        "run",
+        "dev"
+      ],
+      "port": 5197
+    },
+    {
+      "name": "servicenet-api",
+      "runtimeExecutable": ".venv/bin/python",
+      "runtimeArgs": [
+        "-m",
+        "uvicorn",
+        "app:app",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8198",
+        "--app-dir",
+        "apps/servicenet/server"
+      ],
+      "port": 8198
+    },
+    {
+      "name": "servicenet",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "apps/servicenet/web",
+        "run",
+        "dev"
+      ],
+      "port": 5198
+    }
+  ]
+}
