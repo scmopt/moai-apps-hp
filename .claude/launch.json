@@ -312,6 +312,18 @@
         "dev"
       ],
       "port": 5198
+    },
+    {
+      "name": "hp-static",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8770",
+        "--directory",
+        "/Users/mikiokubo/Documents/dev/moai-apps-hp"
+      ],
+      "port": 8770
     }
   ]
 }

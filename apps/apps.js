@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initInteractiveDemo();
 });
 
-// ---- 10 apps selector tabs ----
+// ---- 11 apps selector tabs ----
 function initTabs(name) {
   const btns = document.querySelectorAll(`[data-tabs="${name}"] .tab-btn`);
   const panes = document.querySelectorAll(`[data-panes="${name}"] .tab-pane`);
