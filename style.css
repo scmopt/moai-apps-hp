@@ -1837,6 +1837,10 @@ body {
   background: #fff;
 }
 
+.pane-visual img + img {
+  margin-top: 12px;
+}
+
 .pane-visual .pane-caption {
   margin-top: 12px;
   font-size: 0.8rem;
