@@ -1,9 +1,9 @@
 {
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "has": [{ "type": "host", "value": "moai-apps-hp.vercel.app" }],
-      "destination": "https://saas.moai-lab.jp/:path*",
+      "destination": "https://saas.moai-lab.jp/$1",
       "permanent": true
     }
   ],
