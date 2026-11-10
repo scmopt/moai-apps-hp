@@ -1079,6 +1079,23 @@ body {
   color: var(--text-secondary);
 }
 
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 20px;
+  flex: 1;
+  padding: 0 24px;
+}
+.footer-links a {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-links a:hover {
+  color: var(--accent-blue-light);
+}
 .footer-text {
   font-size: 0.85rem;
   color: var(--text-muted);

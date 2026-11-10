@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.moai-lab.jp/sitemap.xml
+Sitemap: https://saas.moai-lab.jp/sitemap.xml

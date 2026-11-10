@@ -1,63 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.moai-lab.jp/home</loc>
-    <lastmod>2026-02-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <loc>https://saas.moai-lab.jp/</loc>
+    <lastmod>2026-11-11</lastmod>
   </url>
   <url>
-    <loc>https://www.moai-lab.jp/products/dispatcher/index.html</loc>
-    <lastmod>2026-02-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://saas.moai-lab.jp/products/dispatcher/</loc>
+    <lastmod>2026-11-11</lastmod>
   </url>
   <url>
-    <loc>https://www.moai-lab.jp/products/forecast/index.html</loc>
-    <lastmod>2026-02-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://saas.moai-lab.jp/products/forecast/</loc>
+    <lastmod>2026-11-11</lastmod>
   </url>
   <url>
-    <loc>https://www.moai-lab.jp/products/inventory/index.html</loc>
-    <lastmod>2026-02-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://saas.moai-lab.jp/products/inventory/</loc>
+    <lastmod>2026-11-11</lastmod>
   </url>
   <url>
-    <loc>https://www.moai-lab.jp/products/metro/index.html</loc>
-    <lastmod>2026-02-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://saas.moai-lab.jp/products/metro/</loc>
+    <lastmod>2026-11-11</lastmod>
   </url>
   <url>
-    <loc>https://www.moai-lab.jp/products/optpack/index.html</loc>
-    <lastmod>2026-02-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://saas.moai-lab.jp/products/optpack/</loc>
+    <lastmod>2026-11-11</lastmod>
   </url>
   <url>
-    <loc>https://www.moai-lab.jp/products/scheduler/index.html</loc>
-    <lastmod>2026-02-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://saas.moai-lab.jp/products/scheduler/</loc>
+    <lastmod>2026-11-11</lastmod>
   </url>
   <url>
-    <loc>https://www.moai-lab.jp/products/ship/index.html</loc>
-    <lastmod>2026-02-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://saas.moai-lab.jp/products/ship/</loc>
+    <lastmod>2026-11-11</lastmod>
   </url>
   <url>
-    <loc>https://www.moai-lab.jp/products/ucp/index.html</loc>
-    <lastmod>2026-02-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://saas.moai-lab.jp/products/ucp/</loc>
+    <lastmod>2026-11-11</lastmod>
   </url>
   <url>
-    <loc>https://www.moai-lab.jp/services/bootcamp/index.html</loc>
-    <lastmod>2026-02-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://saas.moai-lab.jp/services/bootcamp/</loc>
+    <lastmod>2026-11-11</lastmod>
   </url>
 </urlset>

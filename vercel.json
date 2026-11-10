@@ -1,0 +1,12 @@
+{
+  "headers": [
+    {
+      "source": "/pamphlet_(.*)",
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }]
+    },
+    {
+      "source": "/manuals/(.*)",
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }]
+    }
+  ]
+}
