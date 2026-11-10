@@ -1,4 +1,12 @@
 {
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "moai-apps-hp.vercel.app" }],
+      "destination": "https://saas.moai-lab.jp/:path*",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/pamphlet_(.*)",
